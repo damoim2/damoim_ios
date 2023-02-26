@@ -21,6 +21,9 @@
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
 		F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */; };
 		F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88A430D29A3BBB6006D146B /* UserInfoView.swift */; };
+		F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */; };
+		F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC8129A4D91300887727 /* GroupCVCell.swift */; };
+		F889FC8529A4DE7700887727 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F889FC8429A4DE7700887727 /* SnapKit */; };
 		F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A352995431A001719A9 /* AppDelegate.swift */; };
 		F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A372995431A001719A9 /* SceneDelegate.swift */; };
 		F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A392995431A001719A9 /* HomeVC.swift */; };
@@ -29,6 +32,8 @@
 		F8C05A4D2995431B001719A9 /* damoimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A4C2995431B001719A9 /* damoimTests.swift */; };
 		F8C05A572995431B001719A9 /* damoimUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A562995431B001719A9 /* damoimUITests.swift */; };
 		F8C05A592995431B001719A9 /* damoimUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */; };
+		F8F87BEA29AB528500798297 /* Exam.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BE929AB528500798297 /* Exam.swift */; };
+		F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +67,8 @@
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyaccountTVC.swift; sourceTree = "<group>"; };
 		F88A430D29A3BBB6006D146B /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionVFL.swift; sourceTree = "<group>"; };
+		F889FC8129A4D91300887727 /* GroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCell.swift; sourceTree = "<group>"; };
 		F8C05A322995431A001719A9 /* damoim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = damoim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C05A352995431A001719A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C05A372995431A001719A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +81,8 @@
 		F8C05A522995431B001719A9 /* damoimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = damoimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C05A562995431B001719A9 /* damoimUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = damoimUITests.swift; sourceTree = "<group>"; };
 		F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = damoimUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8F87BE929AB528500798297 /* Exam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exam.swift; sourceTree = "<group>"; };
+		F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +135,10 @@
 			isa = PBXGroup;
 			children = (
 				F8C05A392995431A001719A9 /* HomeVC.swift */,
+				F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */,
+				F889FC8129A4D91300887727 /* GroupCVCell.swift */,
+				F8F87BE929AB528500798297 /* Exam.swift */,
+				F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -306,6 +319,7 @@
 			mainGroup = F8C05A292995431A001719A9;
 			packageReferences = (
 				F82EB2C129A376C500E2256D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F889FC8329A4DE7700887727 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F8C05A332995431A001719A9 /* Products */;
 			projectDirPath = "";
@@ -355,13 +369,17 @@
 			files = (
 				F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */,
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
+				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
 				F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */,
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
 				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
+				F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */,
+				F8F87BEA29AB528500798297 /* Exam.swift in Sources */,
 				F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */,
+				F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */,
 				F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */,
 				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,
 				F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */,

@@ -20,11 +20,7 @@ class MainTabBarVC : UITabBarController {
         self.view.backgroundColor = .white
         setNCinit()
         self.tabBar.tintColor = UIColor(named: "purple01")
-    }
-//MARK: - 바보 같은짓을 계속했다 ,,-> TabBar 설정으로인해 상단의 navigationbar Hidden해줘야함 
-    override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
-        
     }
 
 }
