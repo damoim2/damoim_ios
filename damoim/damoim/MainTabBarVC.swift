@@ -20,7 +20,7 @@ class MainTabBarVC : UITabBarController {
         self.view.backgroundColor = .white
         setNCinit()
         self.tabBar.tintColor = UIColor(named: "purple01")
-
+        self.navigationController?.navigationBar.isHidden = true
     }
 
 }
