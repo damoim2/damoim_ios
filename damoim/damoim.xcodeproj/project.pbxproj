@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F82EB2C329A376C500E2256D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F82EB2C229A376C500E2256D /* SnapKit */; };
+		F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82EB2C629A377E900E2256D /* MyProfileTVC.swift */; };
+		F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82EB2CB29A3853D00E2256D /* ExtensionUIImage.swift */; };
+		F82EB2CF29A38A6100E2256D /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2CE29A38A6100E2256D /* Pretendard-Bold.otf */; };
+		F82EB2D129A38A6900E2256D /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D029A38A6900E2256D /* Pretendard-SemiBold.otf */; };
+		F82EB2D329A38A7500E2256D /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */; };
+		F82EB2D529A38A7C00E2256D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */; };
+		F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82EB2D629A38B4200E2256D /* FontSet.swift */; };
 		F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125B299CE6CD0007C177 /* MainTabBarVC.swift */; };
 		F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125D299CE9FA0007C177 /* CalendarVC.swift */; };
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
+		F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */; };
+		F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88A430D29A3BBB6006D146B /* UserInfoView.swift */; };
 		F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */; };
 		F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC8129A4D91300887727 /* GroupCVCell.swift */; };
 		F889FC8529A4DE7700887727 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F889FC8429A4DE7700887727 /* SnapKit */; };
@@ -44,10 +54,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F82EB2C629A377E900E2256D /* MyProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileTVC.swift; sourceTree = "<group>"; };
+		F82EB2CB29A3853D00E2256D /* ExtensionUIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIImage.swift; sourceTree = "<group>"; };
+		F82EB2CE29A38A6100E2256D /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		F82EB2D029A38A6900E2256D /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		F82EB2D629A38B4200E2256D /* FontSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSet.swift; sourceTree = "<group>"; };
 		F841125B299CE6CD0007C177 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		F841125D299CE9FA0007C177 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyaccountTVC.swift; sourceTree = "<group>"; };
+		F88A430D29A3BBB6006D146B /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionVFL.swift; sourceTree = "<group>"; };
 		F889FC8129A4D91300887727 /* GroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCell.swift; sourceTree = "<group>"; };
 		F8C05A322995431A001719A9 /* damoim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = damoim.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F889FC8529A4DE7700887727 /* SnapKit in Frameworks */,
+				F82EB2C329A376C500E2256D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +111,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F82EB2CA29A3852500E2256D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F82EB2CB29A3853D00E2256D /* ExtensionUIImage.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F82EB2CD29A389D200E2256D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F82EB2CE29A38A6100E2256D /* Pretendard-Bold.otf */,
+				F82EB2D029A38A6900E2256D /* Pretendard-SemiBold.otf */,
+				F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */,
+				F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */,
+				F82EB2D629A38B4200E2256D /* FontSet.swift */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		F841125F299CEA140007C177 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				F8411265299CEA5C0007C177 /* MyProfileVC.swift */,
+				F82EB2C629A377E900E2256D /* MyProfileTVC.swift */,
+				F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */,
+				F88A430D29A3BBB6006D146B /* UserInfoView.swift */,
 			);
 			path = MyProfile;
 			sourceTree = "<group>";
@@ -151,6 +193,8 @@
 		F8C05A342995431A001719A9 /* damoim */ = {
 			isa = PBXGroup;
 			children = (
+				F82EB2CD29A389D200E2256D /* Font */,
+				F82EB2CA29A3852500E2256D /* Extension */,
 				F841125B299CE6CD0007C177 /* MainTabBarVC.swift */,
 				F8411264299CEA400007C177 /* MyProfile */,
 				F8411261299CEA200007C177 /* Chat */,
@@ -199,7 +243,7 @@
 			);
 			name = damoim;
 			packageProductDependencies = (
-				F889FC8429A4DE7700887727 /* SnapKit */,
+				F82EB2C229A376C500E2256D /* SnapKit */,
 			);
 			productName = damoim;
 			productReference = F8C05A322995431A001719A9 /* damoim.app */;
@@ -274,6 +318,7 @@
 			);
 			mainGroup = F8C05A292995431A001719A9;
 			packageReferences = (
+				F82EB2C129A376C500E2256D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				F889FC8329A4DE7700887727 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = F8C05A332995431A001719A9 /* Products */;
@@ -293,7 +338,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C05A422995431B001719A9 /* LaunchScreen.storyboard in Resources */,
+				F82EB2D529A38A7C00E2256D /* Pretendard-Regular.otf in Resources */,
+				F82EB2D329A38A7500E2256D /* Pretendard-Medium.otf in Resources */,
+				F82EB2CF29A38A6100E2256D /* Pretendard-Bold.otf in Resources */,
 				F8C05A3F2995431B001719A9 /* Assets.xcassets in Resources */,
+				F82EB2D129A38A6900E2256D /* Pretendard-SemiBold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,15 +368,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */,
+				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
 				F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */,
+				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
+				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
+				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
 				F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */,
 				F8F87BEA29AB528500798297 /* Exam.swift in Sources */,
 				F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */,
 				F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */,
 				F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */,
+				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,
 				F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,7 +716,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F889FC8329A4DE7700887727 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		F82EB2C129A376C500E2256D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -673,9 +727,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F889FC8429A4DE7700887727 /* SnapKit */ = {
+		F82EB2C229A376C500E2256D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F889FC8329A4DE7700887727 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = F82EB2C129A376C500E2256D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -96,7 +96,6 @@ extension HomeVC : UICollectionViewDelegateFlowLayout{
 
         return CGSize(width: width, height: width * flowLayout.ratioHeightToWidth)
     }
-
 }
 
 
