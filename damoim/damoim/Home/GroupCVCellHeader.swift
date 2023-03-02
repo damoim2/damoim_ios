@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+
 class GroupCVCellHeader: UICollectionReusableView {
     static let identi = "GroupCVCellHeaderid"
+    var gridThreeAction :(() -> ())?
+    var gridTwoAction :(() -> ())?
     private lazy var containerView : UIView = {
         let containerView = UIView()
 
@@ -17,7 +20,7 @@ class GroupCVCellHeader: UICollectionReusableView {
     private lazy var groupLabel : UILabel = {
         let label = UILabel()
         label.text = "나의 모임"
-        label.font = UIFont.boldSystemFont(ofSize: 17)
+        label.font = UIFont(name: CustomFont.Bold.rawValue, size: 17)
         return label
     }()
     private lazy var buttonStackView : UIStackView = {
@@ -32,6 +35,8 @@ class GroupCVCellHeader: UICollectionReusableView {
         super.init(frame: frame)
         setAddSubView()
         setAutoLayout()
+        self.threeGridUIButton.addTarget(self, action: #selector(tapThreeGrid), for: .touchUpInside)
+        self.twoGridUIButton.addTarget(self, action: #selector(tapTwoGrid), for: .touchUpInside)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -42,14 +47,26 @@ class GroupCVCellHeader: UICollectionReusableView {
     }
     private lazy var twoGridUIButton : UIButton = {
         let gridButton = UIButton()
-        gridButton.setImage(UIImage(named: "twogrid"), for: .normal)
+        gridButton.setImage(UIImage(named: "twofillgrid"), for: .normal)
         return gridButton
     }()
+    
     private lazy var threeGridUIButton : UIButton = {
         let gridButton = UIButton()
         gridButton.setImage(UIImage(named: "threegrid"), for: .normal)
         return gridButton
     }()
+    
+    @objc func tapTwoGrid(sender : UIButton!){
+        twoGridUIButton.setImage(UIImage(named: "twofillgrid"), for: .normal)
+        threeGridUIButton.setImage(UIImage(named: "threegrid"), for: .normal)
+        gridTwoAction?()
+    }
+    @objc func tapThreeGrid(sender : UIButton!){
+        twoGridUIButton.setImage(UIImage(named: "twogrid"), for: .normal)
+        threeGridUIButton.setImage(UIImage(named: "threefillgrid"), for: .normal)
+        gridThreeAction?()
+    }
     func setAddSubView(){
         addSubview(containerView)
         containerView.addSubview(groupLabel)

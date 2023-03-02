@@ -12,10 +12,11 @@ struct ExampleCVItem{
     let groupName : String?
 }
 class HomeVC: UIViewController {
-    let sample = (1...6).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "test")}
-    private lazy var gridFlowLayout : GridCollectionVFL = {
+    let sample = (1...10).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "test")}
+    static var numOfcol = 2
+    var gridFlowLayout : GridCollectionVFL = {
         let layout = GridCollectionVFL()
-        layout.cellSpacing = 8
+        layout.cellSpacing = 10
         layout.numberOfColumns = 2
         return layout
     }()
@@ -73,17 +74,27 @@ extension HomeVC : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader{
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: GroupCVCellHeader.identi, for: indexPath) as? GroupCVCellHeader else {return UICollectionReusableView()}
+            header.gridTwoAction = { [unowned self] in
+                gridFlowLayout.numberOfColumns = 2
+                groupListCV.reloadData()
+            }
+            header.gridThreeAction = { [unowned self] in
+                gridFlowLayout.numberOfColumns = 3
+                groupListCV.reloadData()
+            }
+            
             return header
         }
         return UICollectionReusableView()
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
             let width: CGFloat = collectionView.frame.width
-            let height: CGFloat = 30
+            let height: CGFloat = 50
             return CGSize(width: width, height: height)
     }
     
 }
+
 extension HomeVC : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let flowLayout = collectionViewLayout as? GridCollectionVFL,
@@ -91,7 +102,7 @@ extension HomeVC : UICollectionViewDelegateFlowLayout{
            else { fatalError() }
            
            let widthOfCells = collectionView.bounds.width - (collectionView.contentInset.left + collectionView.contentInset.right)
-        let widthOfSpacing = 10.0
+        let widthOfSpacing =  CGFloat(flowLayout.numberOfColumns - 1) * flowLayout.cellSpacing
            let width = (widthOfCells - widthOfSpacing) / CGFloat(flowLayout.numberOfColumns)
 
         return CGSize(width: width, height: width * flowLayout.ratioHeightToWidth)

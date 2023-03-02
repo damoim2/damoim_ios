@@ -18,7 +18,7 @@ class GroupCVCell: UICollectionViewCell {
     private lazy var groupNameLabel : UILabel = {
         let groupName = UILabel()
         groupName.textAlignment = .center
-        groupName.font = UIFont.systemFont(ofSize: 15)
+        groupName.font = UIFont(name: CustomFont.Regular.rawValue, size: 15)
         return groupName
     }()
 
