@@ -20,7 +20,7 @@
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
-		F870077729B0D61800522B35 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077629B0D61800522B35 /* TestCell.swift */; };
+		F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077829B0DB1400522B35 /* ScheduleView.swift */; };
 		F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */; };
 		F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */; };
 		F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC8129A4D91300887727 /* GroupCVCell.swift */; };
@@ -67,7 +67,7 @@
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
-		F870077629B0D61800522B35 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		F870077829B0DB1400522B35 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyaccountTVC.swift; sourceTree = "<group>"; };
 		F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionVFL.swift; sourceTree = "<group>"; };
 		F889FC8129A4D91300887727 /* GroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCell.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				F8F87BE929AB528500798297 /* Exam.swift */,
 				F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */,
 				F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */,
-				F870077629B0D61800522B35 /* TestCell.swift */,
+				F870077829B0DB1400522B35 /* ScheduleView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -376,6 +376,7 @@
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
 				F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */,
+				F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */,
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
@@ -384,7 +385,6 @@
 				F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */,
 				F8F87BEA29AB528500798297 /* Exam.swift in Sources */,
 				F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */,
-				F870077729B0D61800522B35 /* TestCell.swift in Sources */,
 				F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */,
 				F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */,
 				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,
