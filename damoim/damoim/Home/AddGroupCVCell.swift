@@ -16,7 +16,7 @@ class AddGroupCVCell: UICollectionViewCell {
     }()
     private lazy var addGroupButton : UIButton = {
         var config = UIButton.Configuration.plain()
-        config.attributedTitle = AttributedString("새 모임 만들기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Regular.rawValue, size: 13)!]))
+        config.attributedTitle = AttributedString("새 모임 만들기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Medium.rawValue, size: 13)!]))
         config.image = UIImage(named: "plusImg")
         config.imagePlacement = .top
         config.imagePadding = 15
@@ -47,9 +47,7 @@ class AddGroupCVCell: UICollectionViewCell {
         }
         containerView.addSubview(addGroupButton)
         addGroupButton.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            
-            make.height.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 }

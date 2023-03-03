@@ -20,9 +20,11 @@ class MainTabBarVC : UITabBarController {
         self.view.backgroundColor = .white
         setNCinit()
         self.tabBar.tintColor = UIColor(named: "purple01")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
-
 }
 extension MainTabBarVC {
     func setNCinit(){

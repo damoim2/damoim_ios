@@ -46,7 +46,7 @@ class GroupCVCell: UICollectionViewCell {
             make.right.equalTo(self.contentView.snp.right)
         }
         groupNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.groupImgView.snp.bottom).offset(10)
+            make.top.equalTo(self.groupImgView.snp.bottom)
             make.left.equalTo(self.contentView.snp.left)
             make.right.equalTo(self.contentView.snp.right)
             make.bottom.equalTo(self.contentView.snp.bottom)

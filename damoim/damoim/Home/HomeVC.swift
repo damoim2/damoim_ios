@@ -12,7 +12,18 @@ struct ExampleCVItem{
     let groupName : String?
 }
 class HomeVC: UIViewController {
-    let sample = (1...2).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "test")}
+  
+    private lazy var scheduleView : UIView = {
+        let scheduleView = ScheduleView()
+        scheduleView.backgroundColor = UIColor.white
+        return scheduleView
+    }()
+    private lazy var containerView : UIView = {
+        let containerView = UIView()
+        containerView.backgroundColor = UIColor(named: "grey05")
+        return containerView
+    }()
+    let sample = (1...3).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "test")}
     static var numOfcol = 2
     var gridFlowLayout : GridCollectionVFL = {
         let layout = GridCollectionVFL()
@@ -31,32 +42,49 @@ class HomeVC: UIViewController {
         grouptList.register(GroupCVCell.self, forCellWithReuseIdentifier: GroupCVCell.identi)
         grouptList.register(AddGroupCVCell.self, forCellWithReuseIdentifier: AddGroupCVCell.identi)
         grouptList.register(GroupCVCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: GroupCVCellHeader.identi)
+        grouptList.backgroundColor = UIColor(named: "grey05")
         return grouptList
     }()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         setAddSubView()
         setAutoLayout()
         setCV()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
 }
 extension HomeVC {
-    func setAddSubView(){
-        self.view.addSubview(self.groupListCV)
+    private func setAddSubView(){
+        
+        self.view.addSubview(self.containerView)
+        self.containerView.addSubview(scheduleView)
+        self.containerView.addSubview(groupListCV)
+        
     }
-    func setCV(){
+    private func setCV(){
         self.groupListCV.delegate = self
         self.groupListCV.dataSource = self
     }
-    func setAutoLayout(){
-        groupListCV.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-10)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(16)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-16)
+    
+    private func setAutoLayout(){
+        containerView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
+        scheduleView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+        }
+        groupListCV.snp.makeConstraints { make in
+            make.top.equalTo(scheduleView.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+        
     }
 }
 extension HomeVC : UICollectionViewDataSource {
@@ -87,7 +115,7 @@ extension HomeVC : UICollectionViewDataSource {
     }
     //MARK: - Header & footer
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-       
+        
         if kind == UICollectionView.elementKindSectionHeader{
             if indexPath.section == 0{
                 

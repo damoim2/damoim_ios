@@ -80,14 +80,14 @@ class GroupCVCellHeader: UICollectionReusableView {
         }
         groupLabel.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
-            make.left.equalTo(containerView.snp.left)
+            make.left.equalTo(containerView.snp.left).offset(16)
             make.bottom.equalTo(containerView.snp.bottom)
             
         }
         buttonStackView.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
             make.bottom.equalTo(containerView.snp.bottom)
-            make.right.equalTo(containerView.snp.right)
+            make.right.equalTo(containerView.snp.right).offset(-16)
             
         }
         
