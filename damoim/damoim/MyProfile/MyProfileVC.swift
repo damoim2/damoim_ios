@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 class MyProfileVC: UIViewController {
-    var testObject = [["내 계좌","KB국민카드 ******316*"],["설정","법적 고지","버전 정보","개인정보 사용방침","비밀번호 변경","로그아웃"]]
+    var profileText = [["내 계좌","KB국민카드 ******316*"],["설정","법적 고지","버전 정보","개인정보 사용방침","비밀번호 변경","로그아웃"]]
     var myProfileTableView : UITableView = {
         let tableView =  UITableView(frame: .zero, style: .insetGrouped)
         tableView.bounces = false
@@ -84,12 +84,12 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
         guard let profileCell = tableView.dequeueReusableCell(withIdentifier: MyProfileTVC.indenti, for: indexPath) as? MyProfileTVC else {return UITableViewCell()}
         guard let accuntCell = tableView.dequeueReusableCell(withIdentifier: MyaccountTVC.indenti, for: indexPath) as? MyaccountTVC else {return UITableViewCell()}
         if indexPath.row == 0 {
-            profileCell.setString(model: testObject[indexPath.section][indexPath.row], font: CustomFont.SemiBold.rawValue, fontsize: 15, textcolor: "purple02")
+            profileCell.setString(model: profileText[indexPath.section][indexPath.row], font: CustomFont.SemiBold.rawValue, fontsize: 15, textcolor: "purple02")
         }else if indexPath == [0,1]{
-            accuntCell.setAccountInfo(model: testObject[indexPath.section][indexPath.row])
+            accuntCell.setAccountInfo(model: profileText[indexPath.section][indexPath.row])
             return accuntCell
         }else {
-            profileCell.setString(model: testObject[indexPath.section][indexPath.row], font: CustomFont.Regular.rawValue, fontsize: 15, textcolor: "black")
+            profileCell.setString(model: profileText[indexPath.section][indexPath.row], font: CustomFont.Regular.rawValue, fontsize: 15, textcolor: "black")
         }
         
         

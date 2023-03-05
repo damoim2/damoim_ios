@@ -37,7 +37,10 @@ class GroupCVCell: UICollectionViewCell {
         self.groupNameLabel.text = model.groupName
     }
     
-    func setCell(){
+    
+}
+extension GroupCVCell {
+    private func setCell(){
         self.contentView.addSubview(groupImgView)
         self.contentView.addSubview(groupNameLabel)
         groupImgView.snp.makeConstraints { make in
@@ -53,3 +56,4 @@ class GroupCVCell: UICollectionViewCell {
         }
     }
 }
+

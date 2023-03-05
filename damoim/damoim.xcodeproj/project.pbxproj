@@ -15,6 +15,12 @@
 		F82EB2D329A38A7500E2256D /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */; };
 		F82EB2D529A38A7C00E2256D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */; };
 		F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82EB2D629A38B4200E2256D /* FontSet.swift */; };
+		F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1DC29B4A6AF00215F8B /* GroupTextListVC.swift */; };
+		F83FD1DF29B4B8D900215F8B /* SetGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1DE29B4B8D900215F8B /* SetGroupVC.swift */; };
+		F83FD1E129B4BB7100215F8B /* GroupInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E029B4BB7100215F8B /* GroupInfoView.swift */; };
+		F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E229B4BB8900215F8B /* SetGroupTVC.swift */; };
+		F83FD1E529B4BD4100215F8B /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */; };
+		F83FD1E729B4CA0300215F8B /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E629B4CA0300215F8B /* ExtensionUIButton.swift */; };
 		F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125B299CE6CD0007C177 /* MainTabBarVC.swift */; };
 		F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125D299CE9FA0007C177 /* CalendarVC.swift */; };
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
@@ -63,6 +69,12 @@
 		F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F82EB2D629A38B4200E2256D /* FontSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSet.swift; sourceTree = "<group>"; };
+		F83FD1DC29B4A6AF00215F8B /* GroupTextListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTextListVC.swift; sourceTree = "<group>"; };
+		F83FD1DE29B4B8D900215F8B /* SetGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroupVC.swift; sourceTree = "<group>"; };
+		F83FD1E029B4BB7100215F8B /* GroupInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoView.swift; sourceTree = "<group>"; };
+		F83FD1E229B4BB8900215F8B /* SetGroupTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroupTVC.swift; sourceTree = "<group>"; };
+		F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
+		F83FD1E629B4CA0300215F8B /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 		F841125B299CE6CD0007C177 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		F841125D299CE9FA0007C177 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -120,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				F82EB2CB29A3853D00E2256D /* ExtensionUIImage.swift */,
+				F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */,
+				F83FD1E629B4CA0300215F8B /* ExtensionUIButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -136,9 +150,29 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		F83FD1DA29B4A67100215F8B /* TextList */ = {
+			isa = PBXGroup;
+			children = (
+				F83FD1DC29B4A6AF00215F8B /* GroupTextListVC.swift */,
+			);
+			path = TextList;
+			sourceTree = "<group>";
+		};
+		F83FD1DB29B4A68600215F8B /* SetGroup */ = {
+			isa = PBXGroup;
+			children = (
+				F83FD1DE29B4B8D900215F8B /* SetGroupVC.swift */,
+				F83FD1E029B4BB7100215F8B /* GroupInfoView.swift */,
+				F83FD1E229B4BB8900215F8B /* SetGroupTVC.swift */,
+			);
+			path = SetGroup;
+			sourceTree = "<group>";
+		};
 		F841125F299CEA140007C177 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F83FD1DB29B4A68600215F8B /* SetGroup */,
+				F83FD1DA29B4A67100215F8B /* TextList */,
 				F862E9E429B1FD1900DA0515 /* NotUsed */,
 				F8C05A392995431A001719A9 /* HomeVC.swift */,
 				F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */,
@@ -382,10 +416,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83FD1E129B4BB7100215F8B /* GroupInfoView.swift in Sources */,
+				F83FD1E729B4CA0300215F8B /* ExtensionUIButton.swift in Sources */,
 				F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */,
+				F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */,
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
+				F83FD1E529B4BD4100215F8B /* ExtensionUIView.swift in Sources */,
 				F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */,
 				F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */,
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
@@ -394,8 +432,10 @@
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
 				F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */,
 				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
+				F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */,
 				F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */,
 				F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */,
+				F83FD1DF29B4B8D900215F8B /* SetGroupVC.swift in Sources */,
 				F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */,
 				F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */,
 				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,

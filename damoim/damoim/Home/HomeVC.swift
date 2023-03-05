@@ -12,7 +12,7 @@ struct ExampleCVItem{
     let groupName : String?
 }
 class HomeVC: UIViewController {
-  
+    
     private lazy var scheduleView : UIView = {
         let scheduleView = ScheduleView()
         scheduleView.backgroundColor = UIColor.white
@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
         containerView.backgroundColor = UIColor(named: "grey05")
         return containerView
     }()
-    let sample = (1...3).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "test")}
+    let sample = (1...3).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "모임 이름")}
     static var numOfcol = 2
     var gridFlowLayout : GridCollectionVFL = {
         let layout = GridCollectionVFL()
@@ -45,12 +45,14 @@ class HomeVC: UIViewController {
         grouptList.backgroundColor = UIColor(named: "grey05")
         return grouptList
     }()
-  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setAddSubView()
         setAutoLayout()
         setCV()
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -161,7 +163,14 @@ extension HomeVC : UICollectionViewDelegateFlowLayout{
         return CGSize(width: width, height: width * flowLayout.ratioHeightToWidth)
     }
 }
-
+extension HomeVC : UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let groupTextListVC = GroupTextListVC()
+        groupTextListVC.groupName = self.sample[indexPath.item].groupName ?? "모임 이름"
+        self.navigationController?.pushViewController(groupTextListVC, animated: false)
+    }
+}
 
 import SwiftUI
 @available(iOS 13.0.0, *)
