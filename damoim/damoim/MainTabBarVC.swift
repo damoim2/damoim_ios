@@ -14,7 +14,7 @@ class MainTabBarVC : UITabBarController {
     let firstTabBarItem = UITabBarItem(title: "홈", image: UIImage(named: "home"), tag: 0)
     let secondTabBarItem = UITabBarItem(title: "달력", image: UIImage(named: "calendar"), tag: 1)
     let thirdTabBarItem = UITabBarItem(title: "채팅", image: UIImage(named: "chat"), tag: 2)
-    let fourthTabBarItem = UITabBarItem(title: "내 프로필", image: UIImage(named: "myprofile"), tag: 3)
+    let fourthTabBarItem = UITabBarItem(title: "내 프로필", image: UIImage(named: "Myprofile"), tag: 3)
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -35,7 +35,7 @@ extension MainTabBarVC {
         secondNC.tabBarItem = secondTabBarItem
         thirdTabBarItem.selectedImage = UIImage(named: "fillchat")
         thirdNC.tabBarItem = thirdTabBarItem
-        fourthTabBarItem.selectedImage = UIImage(named: "fillmyprofile")
+        fourthTabBarItem.selectedImage = UIImage(named: "fillMyprofile")
         fourthNC.tabBarItem = fourthTabBarItem
     }
 }

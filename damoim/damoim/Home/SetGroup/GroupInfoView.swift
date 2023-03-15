@@ -117,7 +117,7 @@ extension GroupInfoView {
 #if DEBUG
 import SwiftUI
 
-struct ServiceUnavailableViewPreview: PreviewProvider {
+struct GroupInfoViewPreview: PreviewProvider {
     static var previews: some View {
         return GroupInfoView().showPreview()
     }

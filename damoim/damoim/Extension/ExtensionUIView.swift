@@ -24,7 +24,7 @@ extension UIView {
     }
 
     func showPreview() -> some View {
-        Preview(view: self).previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro"))
+        Preview(view: self).previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }
 }
 #endif

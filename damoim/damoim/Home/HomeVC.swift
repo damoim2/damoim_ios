@@ -168,6 +168,7 @@ extension HomeVC : UICollectionViewDelegate{
         
         let groupTextListVC = GroupTextListVC()
         groupTextListVC.groupName = self.sample[indexPath.item].groupName ?? "모임 이름"
+        groupTextListVC.groupImage = self.sample[indexPath.item].groupImage ?? UIImage(named: "testImg")
         self.navigationController?.pushViewController(groupTextListVC, animated: false)
     }
 }

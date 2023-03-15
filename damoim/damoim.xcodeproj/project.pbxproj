@@ -15,12 +15,13 @@
 		F82EB2D329A38A7500E2256D /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */; };
 		F82EB2D529A38A7C00E2256D /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */; };
 		F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82EB2D629A38B4200E2256D /* FontSet.swift */; };
+		F83C560729C2132100535CBE /* TextListTVCType2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C560629C2132100535CBE /* TextListTVCType2.swift */; };
+		F83C560929C21A4700535CBE /* ExtensionUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C560829C21A4700535CBE /* ExtensionUILabel.swift */; };
 		F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1DC29B4A6AF00215F8B /* GroupTextListVC.swift */; };
 		F83FD1DF29B4B8D900215F8B /* SetGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1DE29B4B8D900215F8B /* SetGroupVC.swift */; };
 		F83FD1E129B4BB7100215F8B /* GroupInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E029B4BB7100215F8B /* GroupInfoView.swift */; };
 		F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E229B4BB8900215F8B /* SetGroupTVC.swift */; };
 		F83FD1E529B4BD4100215F8B /* ExtensionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */; };
-		F83FD1E729B4CA0300215F8B /* ExtensionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83FD1E629B4CA0300215F8B /* ExtensionUIButton.swift */; };
 		F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125B299CE6CD0007C177 /* MainTabBarVC.swift */; };
 		F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125D299CE9FA0007C177 /* CalendarVC.swift */; };
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
@@ -33,6 +34,9 @@
 		F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */; };
 		F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC8129A4D91300887727 /* GroupCVCell.swift */; };
 		F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88A430D29A3BBB6006D146B /* UserInfoView.swift */; };
+		F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB469129BF0BE5003E405D /* TextListTVCType1.swift */; };
+		F8AB469429BF0DA7003E405D /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */; };
+		F8AB469629BF1213003E405D /* UserWriteInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB469529BF1213003E405D /* UserWriteInfoView.swift */; };
 		F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A352995431A001719A9 /* AppDelegate.swift */; };
 		F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A372995431A001719A9 /* SceneDelegate.swift */; };
 		F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A392995431A001719A9 /* HomeVC.swift */; };
@@ -69,12 +73,13 @@
 		F82EB2D229A38A7500E2256D /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		F82EB2D429A38A7C00E2256D /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F82EB2D629A38B4200E2256D /* FontSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSet.swift; sourceTree = "<group>"; };
+		F83C560629C2132100535CBE /* TextListTVCType2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextListTVCType2.swift; sourceTree = "<group>"; };
+		F83C560829C21A4700535CBE /* ExtensionUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUILabel.swift; sourceTree = "<group>"; };
 		F83FD1DC29B4A6AF00215F8B /* GroupTextListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTextListVC.swift; sourceTree = "<group>"; };
 		F83FD1DE29B4B8D900215F8B /* SetGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroupVC.swift; sourceTree = "<group>"; };
 		F83FD1E029B4BB7100215F8B /* GroupInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoView.swift; sourceTree = "<group>"; };
 		F83FD1E229B4BB8900215F8B /* SetGroupTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGroupTVC.swift; sourceTree = "<group>"; };
 		F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIView.swift; sourceTree = "<group>"; };
-		F83FD1E629B4CA0300215F8B /* ExtensionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIButton.swift; sourceTree = "<group>"; };
 		F841125B299CE6CD0007C177 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		F841125D299CE9FA0007C177 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
@@ -87,6 +92,9 @@
 		F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionVFL.swift; sourceTree = "<group>"; };
 		F889FC8129A4D91300887727 /* GroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCell.swift; sourceTree = "<group>"; };
 		F88A430D29A3BBB6006D146B /* UserInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		F8AB469129BF0BE5003E405D /* TextListTVCType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextListTVCType1.swift; sourceTree = "<group>"; };
+		F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		F8AB469529BF1213003E405D /* UserWriteInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWriteInfoView.swift; sourceTree = "<group>"; };
 		F8C05A322995431A001719A9 /* damoim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = damoim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C05A352995431A001719A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C05A372995431A001719A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,7 +141,8 @@
 			children = (
 				F82EB2CB29A3853D00E2256D /* ExtensionUIImage.swift */,
 				F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */,
-				F83FD1E629B4CA0300215F8B /* ExtensionUIButton.swift */,
+				F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */,
+				F83C560829C21A4700535CBE /* ExtensionUILabel.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -154,6 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				F83FD1DC29B4A6AF00215F8B /* GroupTextListVC.swift */,
+				F8AB469129BF0BE5003E405D /* TextListTVCType1.swift */,
+				F8AB469529BF1213003E405D /* UserWriteInfoView.swift */,
+				F83C560629C2132100535CBE /* TextListTVCType2.swift */,
 			);
 			path = TextList;
 			sourceTree = "<group>";
@@ -417,8 +429,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F83FD1E129B4BB7100215F8B /* GroupInfoView.swift in Sources */,
-				F83FD1E729B4CA0300215F8B /* ExtensionUIButton.swift in Sources */,
+				F83C560929C21A4700535CBE /* ExtensionUILabel.swift in Sources */,
 				F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */,
+				F8AB469429BF0DA7003E405D /* ExtensionUIViewController.swift in Sources */,
 				F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */,
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
@@ -430,7 +443,9 @@
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
+				F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */,
 				F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */,
+				F83C560729C2132100535CBE /* TextListTVCType2.swift in Sources */,
 				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
 				F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */,
 				F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */,
@@ -441,6 +456,7 @@
 				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,
 				F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */,
 				F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */,
+				F8AB469629BF1213003E405D /* UserWriteInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

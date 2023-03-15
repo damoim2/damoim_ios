@@ -27,7 +27,7 @@ class UserInfoView: UIView {
         userImg.image = UIImage(named: "testImg")?.resizeImageTo(size: CGSize(width: 62.5, height: 62.5))
         return userImg
     }()
-    private lazy var userNameLabel : UILabel = {
+    var userNameLabel : UILabel = {
         let userName = UILabel()
         userName.text = "이아리"
         userName.font = UIFont(name: CustomFont.Bold.rawValue, size: 17)

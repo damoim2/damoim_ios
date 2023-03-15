@@ -8,7 +8,7 @@
 import UIKit
 
 class MyProfileTVC: UITableViewCell {
-    static let indenti = "MyProfileTVCid"
+    static let identi = "MyProfileTVCid"
     private lazy var containerView : UIView = {
         let containerView = UIView()
         

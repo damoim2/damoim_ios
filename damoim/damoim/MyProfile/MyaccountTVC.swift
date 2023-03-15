@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 class MyaccountTVC: UITableViewCell {
-    static let indenti = "MyaccountTVCid"
+    static let identi = "MyaccountTVCid"
     private lazy var containerView : UIView = {
         let containerView = UIView()
         

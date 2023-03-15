@@ -1,15 +1,14 @@
 //
-//  ExtensionUIButton.swift
+//  ExtensionUILabel.swift
 //  damoim
 //
-//  Created by 원동진 on 2023/03/05.
+//  Created by 원동진 on 2023/03/16.
 //
 
-import Foundation
 import UIKit
-class BasePaddingLabel: UILabel {
-    private var padding = UIEdgeInsets(top: 16.0, left: 16.0, bottom: 16.0, right: 16.0)
 
+class BasePaddingLabel : UILabel {
+    private var padding = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
     convenience init(padding: UIEdgeInsets) {
         self.init()
         self.padding = padding

@@ -9,7 +9,7 @@ import UIKit
 
 class GridCollectionVFL: UICollectionViewFlowLayout {
     var numberOfColumns = 1
-    var ratioHeightToWidth = 1.2
+    var ratioHeightToWidth = 0.77
     var cellSpacing = 0.0 {
         didSet{
             self.minimumLineSpacing = self.cellSpacing

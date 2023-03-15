@@ -13,15 +13,15 @@ class MyProfileVC: UIViewController {
     var myProfileTableView : UITableView = {
         let tableView =  UITableView(frame: .zero, style: .insetGrouped)
         tableView.bounces = false
-        tableView.register(MyProfileTVC.self, forCellReuseIdentifier: MyProfileTVC.indenti)
-        tableView.register(MyaccountTVC.self, forCellReuseIdentifier: MyaccountTVC.indenti)
+        tableView.register(MyProfileTVC.self, forCellReuseIdentifier: MyProfileTVC.identi)
+        tableView.register(MyaccountTVC.self, forCellReuseIdentifier: MyaccountTVC.identi)
         tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 0
         return tableView
     }()
     var userInfoView : UserInfoView = {
         let view = UserInfoView()
-        
+        view.userNameLabel.text = "원동진"
         view.userImgView.layer.cornerRadius = Double(62.5/2)
         
         view.userImgView.layer.masksToBounds = true
@@ -81,8 +81,8 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let profileCell = tableView.dequeueReusableCell(withIdentifier: MyProfileTVC.indenti, for: indexPath) as? MyProfileTVC else {return UITableViewCell()}
-        guard let accuntCell = tableView.dequeueReusableCell(withIdentifier: MyaccountTVC.indenti, for: indexPath) as? MyaccountTVC else {return UITableViewCell()}
+        guard let profileCell = tableView.dequeueReusableCell(withIdentifier: MyProfileTVC.identi, for: indexPath) as? MyProfileTVC else {return UITableViewCell()}
+        guard let accuntCell = tableView.dequeueReusableCell(withIdentifier: MyaccountTVC.identi, for: indexPath) as? MyaccountTVC else {return UITableViewCell()}
         if indexPath.row == 0 {
             profileCell.setString(model: profileText[indexPath.section][indexPath.row], font: CustomFont.SemiBold.rawValue, fontsize: 15, textcolor: "purple02")
         }else if indexPath == [0,1]{
