@@ -29,6 +29,7 @@ class MyProfileVC: UIViewController {
         view.userImgView.layer.masksToBounds = true
         return view
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()

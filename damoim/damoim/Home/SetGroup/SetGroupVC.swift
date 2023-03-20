@@ -29,6 +29,15 @@ class SetGroupVC: UIViewController {
         tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
         return tableView
     }()
+    private lazy var groupDeleteButton : UIButton = {
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = AttributedString("모임 삭제 하기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Medium.rawValue, size: 15)!]))
+        config.baseForegroundColor = UIColor(named: "grey03")
+        let groupDeleteButton = UIButton(configuration: config)
+        groupDeleteButton.backgroundColor = UIColor(named: "grey04")
+        groupDeleteButton.layer.cornerRadius = 8
+        return groupDeleteButton
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -53,6 +62,7 @@ extension SetGroupVC {
     private func addSubView(){
         self.view.addSubview(groupInfoView)
         self.view.addSubview(groupSetTableView)
+        self.view.addSubview(groupDeleteButton)
         
     }
     private func setAutoLayout(){
@@ -62,6 +72,10 @@ extension SetGroupVC {
         groupSetTableView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(groupInfoView.snp.bottom).offset(8)
+        }
+        groupDeleteButton.snp.makeConstraints { make in
+            make.right.equalTo(view.snp.right).offset(-16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-34)
         }
         
     }
