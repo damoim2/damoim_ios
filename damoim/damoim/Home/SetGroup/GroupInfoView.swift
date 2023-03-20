@@ -11,7 +11,7 @@ protocol dismissActionDelegate {
     func dissmissAction()
 }
 class GroupInfoView: UIView {
-    var delegate : dismissActionDelegate?
+    var groupInfoViewdelegate : dismissActionDelegate?
     private lazy var groupNameLabel : UILabel = {
         let nameLabel = UILabel()
         nameLabel.text = "계모임 이름"
@@ -58,7 +58,7 @@ class GroupInfoView: UIView {
 }
 extension GroupInfoView {
     @objc func tapDismiss(){
-        self.delegate?.dissmissAction()
+        self.groupInfoViewdelegate?.dissmissAction()
     }
 }
 extension GroupInfoView {

@@ -104,7 +104,10 @@ extension GroupTextListVC {
     private func setNavigationBar(){
         
         self.navigationController?.navigationBar.isHidden = false
+        let backBarButtonItem = UIBarButtonItem(image: UIImage(named: "backBtn"), style: .plain, target: self, action: #selector(backVC))
+        self.navigationItem.leftBarButtonItem = backBarButtonItem
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "setImg"), style: .plain, target: self, action: #selector(tapGroupSet))
+        self.navigationController?.navigationBar.backgroundColor = .clear
         navigationController?.navigationBar.tintColor = .white
         //        self.navigationItem.title = "\(groupName)"
         //        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -128,16 +131,24 @@ extension GroupTextListVC : UITableViewDataSource,UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let textListTVC = tableView.dequeueReusableCell(withIdentifier: TextListTVCType1.identi, for: indexPath)as? TextListTVCType1 else {return UITableViewCell()}
+        textListTVC.textListDelegate = self
         textListTVC.setWriteInfoView(model: sample[indexPath.item])
         
         return textListTVC
     }
 
 }
+extension GroupTextListVC : tapMoreTextActionDelegate {
+    func tapMoreTextAction(){
+        let textDetailVC = TextDetailVC()
+        textDetailVC.groupName = self.groupName
+        self.navigationController?.pushViewController(textDetailVC.self, animated: false)
+    }
+}
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
-struct ViewController_Preview: PreviewProvider {
+struct GroupTextListVCPreview: PreviewProvider {
     static var previews: some View {
         GroupTextListVC().showPreview(.iPhone14Pro)
     }

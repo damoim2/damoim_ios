@@ -49,3 +49,9 @@ extension UIViewController {
     }
 }
 #endif
+extension UIViewController {
+    @objc func backVC(){
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+

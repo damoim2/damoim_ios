@@ -23,7 +23,7 @@ class HomeVC: UIViewController {
         containerView.backgroundColor = UIColor(named: "grey05")
         return containerView
     }()
-    let sample = (1...3).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "모임 이름")}
+    let sample = (1...3).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "계모임 이름")}
     static var numOfcol = 2
     var gridFlowLayout : GridCollectionVFL = {
         let layout = GridCollectionVFL()
@@ -51,8 +51,7 @@ class HomeVC: UIViewController {
         setAddSubView()
         setAutoLayout()
         setCV()
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-        self.navigationItem.backBarButtonItem = backBarButtonItem
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

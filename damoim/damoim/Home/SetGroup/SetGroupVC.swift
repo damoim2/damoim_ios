@@ -16,7 +16,7 @@ class SetGroupVC: UIViewController {
     
     private lazy var groupInfoView : GroupInfoView = {
         let view = GroupInfoView()
-        view.delegate = self
+        view.groupInfoViewdelegate = self
         return view
     }()
 

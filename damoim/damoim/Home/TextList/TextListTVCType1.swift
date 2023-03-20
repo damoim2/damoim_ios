@@ -7,7 +7,11 @@
 
 import UIKit
 import SnapKit
+protocol tapMoreTextActionDelegate {
+    func tapMoreTextAction()
+}
 class TextListTVCType1: UITableViewCell {
+    var textListDelegate : tapMoreTextActionDelegate?
     static let identi = "TextListTVCid"
     private lazy var containerView : UIView = {
         let view = UIView()
@@ -79,6 +83,7 @@ class TextListTVCType1: UITableViewCell {
         config.attributedTitle = AttributedString("...더보기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Regular.rawValue, size: 13)!]))
         config.baseForegroundColor = UIColor(named: "purple04")
         let addTextButton = UIButton(configuration: config)
+        addTextButton.addTarget(self, action: #selector(tapAddTextButton), for: .touchUpInside)
         return addTextButton
     }()
     //MARK: - 좋아요 댓글
@@ -149,6 +154,10 @@ class TextListTVCType1: UITableViewCell {
     
 }
 extension TextListTVCType1  {
+    @objc private func tapAddTextButton(){
+        self.textListDelegate?.tapMoreTextAction()
+    }
+    
     private func addSubView(){
         contentView.addSubview(containerView)
         containerView.addSubview(writeInfoView)

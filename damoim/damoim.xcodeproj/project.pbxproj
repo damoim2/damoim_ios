@@ -37,6 +37,7 @@
 		F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB469129BF0BE5003E405D /* TextListTVCType1.swift */; };
 		F8AB469429BF0DA7003E405D /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */; };
 		F8AB469629BF1213003E405D /* UserWriteInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AB469529BF1213003E405D /* UserWriteInfoView.swift */; };
+		F8B20A8E29C842680021F9F4 /* TextDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */; };
 		F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A352995431A001719A9 /* AppDelegate.swift */; };
 		F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A372995431A001719A9 /* SceneDelegate.swift */; };
 		F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A392995431A001719A9 /* HomeVC.swift */; };
@@ -95,6 +96,7 @@
 		F8AB469129BF0BE5003E405D /* TextListTVCType1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextListTVCType1.swift; sourceTree = "<group>"; };
 		F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
 		F8AB469529BF1213003E405D /* UserWriteInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWriteInfoView.swift; sourceTree = "<group>"; };
+		F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetailVC.swift; sourceTree = "<group>"; };
 		F8C05A322995431A001719A9 /* damoim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = damoim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C05A352995431A001719A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C05A372995431A001719A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		F841125F299CEA140007C177 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F8B20A8C29C842510021F9F4 /* TextDeatil */,
 				F83FD1DB29B4A68600215F8B /* SetGroup */,
 				F83FD1DA29B4A67100215F8B /* TextList */,
 				F862E9E429B1FD1900DA0515 /* NotUsed */,
@@ -230,6 +233,14 @@
 				F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */,
 			);
 			path = NotUsed;
+			sourceTree = "<group>";
+		};
+		F8B20A8C29C842510021F9F4 /* TextDeatil */ = {
+			isa = PBXGroup;
+			children = (
+				F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */,
+			);
+			path = TextDeatil;
 			sourceTree = "<group>";
 		};
 		F8C05A292995431A001719A9 = {
@@ -438,6 +449,7 @@
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
 				F83FD1E529B4BD4100215F8B /* ExtensionUIView.swift in Sources */,
 				F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */,
+				F8B20A8E29C842680021F9F4 /* TextDetailVC.swift in Sources */,
 				F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */,
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
