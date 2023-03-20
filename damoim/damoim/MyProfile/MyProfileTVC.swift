@@ -35,7 +35,7 @@ class MyProfileTVC: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
-
+   
 }
 extension MyProfileTVC {
     private func setAutoLayout(){

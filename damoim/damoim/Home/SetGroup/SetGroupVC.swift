@@ -25,7 +25,8 @@ class SetGroupVC: UIViewController {
         tableView.bounces = false
         tableView.register(SetGroupTVC.self, forCellReuseIdentifier: SetGroupTVC.identi)
         tableView.separatorStyle = .none
-        tableView.sectionHeaderHeight = 0
+        tableView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
+        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
         return tableView
     }()
     override func viewDidLoad() {
@@ -77,6 +78,9 @@ extension SetGroupVC : UITableViewDataSource,UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 35
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
     }
 }
 extension SetGroupVC : dismissActionDelegate {

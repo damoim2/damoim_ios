@@ -13,10 +13,12 @@ class MyProfileVC: UIViewController {
     var myProfileTableView : UITableView = {
         let tableView =  UITableView(frame: .zero, style: .insetGrouped)
         tableView.bounces = false
+        tableView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
+        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
         tableView.register(MyProfileTVC.self, forCellReuseIdentifier: MyProfileTVC.identi)
         tableView.register(MyaccountTVC.self, forCellReuseIdentifier: MyaccountTVC.identi)
         tableView.separatorStyle = .none
-        tableView.sectionHeaderHeight = 0
+        
         return tableView
     }()
     var userInfoView : UserInfoView = {
@@ -80,6 +82,7 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
         return 2
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let profileCell = tableView.dequeueReusableCell(withIdentifier: MyProfileTVC.identi, for: indexPath) as? MyProfileTVC else {return UITableViewCell()}
         guard let accuntCell = tableView.dequeueReusableCell(withIdentifier: MyaccountTVC.identi, for: indexPath) as? MyaccountTVC else {return UITableViewCell()}
@@ -95,8 +98,10 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
         
         return profileCell
     }
-    
-  
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+
  
     
 }
