@@ -172,23 +172,12 @@ extension HomeVC : UICollectionViewDelegate{
     }
 }
 
+#if canImport(SwiftUI) && DEBUG
 import SwiftUI
-@available(iOS 13.0.0, *)
-struct HomeVCRepresentable: UIViewControllerRepresentable {
-    typealias UIViewControllerType = HomeVC
-    
-    func makeUIViewController(context: Context) -> HomeVC {
-        return HomeVC()
-    }
-    
-    func updateUIViewController(_ uiViewController: HomeVC, context: Context) {
-    }
-    
-}
 struct HomeVCPreview: PreviewProvider {
     static var previews: some View {
-        HomeVCRepresentable()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
-            .previewDisplayName("iPhone 14 Pro")
+        HomeVC().showPreview(.iPhone14Pro)
     }
 }
+#endif
+
