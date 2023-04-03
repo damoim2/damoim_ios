@@ -102,23 +102,11 @@ extension SetGroupVC : dismissActionDelegate {
         self.presentingViewController?.dismiss(animated: true)
     }
 }
+#if canImport(SwiftUI) && DEBUG
 import SwiftUI
-@available(iOS 13.0.0, *)
-struct SetGroupVCRepresentable: UIViewControllerRepresentable {
-    typealias UIViewControllerType = SetGroupVC
-    
-    func makeUIViewController(context: Context) -> SetGroupVC {
-        return SetGroupVC()
-    }
-    
-    func updateUIViewController(_ uiViewController: SetGroupVC, context: Context) {
-    }
-    
-}
 struct SetGroupVCPreview: PreviewProvider {
     static var previews: some View {
-        SetGroupVCRepresentable()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
-            .previewDisplayName("iPhone 14 Pro")
+        SetGroupVC().showPreview(.iPhone14Pro)
     }
 }
+#endif

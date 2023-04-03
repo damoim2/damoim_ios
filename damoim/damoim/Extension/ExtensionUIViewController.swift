@@ -53,6 +53,9 @@ extension UIViewController {
     @objc func backVC(){
         self.navigationController?.popViewController(animated: true)
     }
+    @objc func tapDismiss(){
+        self.presentingViewController?.dismiss(animated: true)
+    }
     func setChangeFont(changeLabel: UILabel,fontName : String,fontSize:CGFloat,targetStriong : String){
         let fullText = changeLabel.text ?? ""
         let attFont = UIFont(name: fontName, size: fontSize)

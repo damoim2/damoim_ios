@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "toa-heftiba-x9I-6yoXrXE-unsplash 2.png",
+      "filename" : "ic_close.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "ic_close@2x.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "ic_close@3x.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
