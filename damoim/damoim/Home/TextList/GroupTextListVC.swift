@@ -135,7 +135,7 @@ extension GroupTextListVC : UITableViewDataSource,UITableViewDelegate{
         guard let textListTVC = tableView.dequeueReusableCell(withIdentifier: TextListTVCType1.identi, for: indexPath)as? TextListTVCType1 else {return UITableViewCell()}
         textListTVC.textListDelegate = self
         textListTVC.setWriteInfoView(model: sample[indexPath.item])
-        
+        textListTVC.selectionStyle = .none
         return textListTVC
     }
     
