@@ -50,7 +50,7 @@ class GroupTextListVC: UIViewController {
         titleLabel.textColor = UIColor(named: "grey06")
         return titleLabel
     }()
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +61,7 @@ class GroupTextListVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-   
+        
         setNavigationBar()
     }
     
@@ -71,7 +71,9 @@ extension GroupTextListVC {
     @objc func tapGroupSet(){
         let setGroupVC = SetGroupVC()
         setGroupVC.modalPresentationStyle = .fullScreen
-        self.present(setGroupVC, animated: true)
+        let transition = CATransition().segueFromRight()
+        view.window?.layer.add(transition, forKey: kCATransition)
+        self.present(setGroupVC, animated: false)
     }
     private func setAddView(){
         self.view.addSubview(textListTableView)
@@ -122,7 +124,7 @@ extension GroupTextListVC {
         textListTableView.delegate = self
         textListTableView.dataSource = self
     }
-
+    
 }
 extension GroupTextListVC : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -136,7 +138,7 @@ extension GroupTextListVC : UITableViewDataSource,UITableViewDelegate{
         
         return textListTVC
     }
-
+    
 }
 extension GroupTextListVC : tapMoreTextActionDelegate {
     func tapMoreTextAction(){

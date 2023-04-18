@@ -99,7 +99,9 @@ extension SetGroupVC : UITableViewDataSource,UITableViewDelegate{
 }
 extension SetGroupVC : dismissActionDelegate {
     func dissmissAction(){
-        self.presentingViewController?.dismiss(animated: true)
+        let transition = CATransition().segueFromLeft()
+        view.window?.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false)
     }
 }
 #if canImport(SwiftUI) && DEBUG
