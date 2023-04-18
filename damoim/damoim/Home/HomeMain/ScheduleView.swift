@@ -14,10 +14,10 @@ class ScheduleView: UIView {
         containerView.backgroundColor = .white
         return containerView
     }()
-    private lazy var damoimLogo : UIImageView = {
-        let logoImageView = UIImageView()
-        logoImageView.image = UIImage(named: "damoimLogo")
-        return logoImageView
+    var damoimLogo : UIButton = {
+        let damoimLogo = UIButton()
+        damoimLogo.setImage(UIImage(named: "damoimLogo"), for: .normal)
+        return damoimLogo
     }()
     private lazy var scheduleLabel : UILabel = {
         let textLabel = UILabel()
@@ -70,5 +70,6 @@ class ScheduleView: UIView {
             make.bottom.equalToSuperview().offset(-14)
         }
     }
+  
 }
 

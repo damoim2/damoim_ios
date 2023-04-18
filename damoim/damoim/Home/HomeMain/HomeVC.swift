@@ -16,6 +16,7 @@ class HomeVC: UIViewController {
     private lazy var scheduleView : UIView = {
         let scheduleView = ScheduleView()
         scheduleView.backgroundColor = UIColor.white
+        scheduleView.damoimLogo.addTarget(self, action: #selector(didTapLogo), for: .touchUpInside)
         return scheduleView
     }()
     private lazy var containerView : UIView = {
@@ -58,35 +59,6 @@ class HomeVC: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-}
-extension HomeVC {
-    private func setAddSubView(){
-        
-        self.view.addSubview(self.containerView)
-        self.containerView.addSubview(scheduleView)
-        self.containerView.addSubview(groupListCV)
-        
-    }
-    private func setCV(){
-        self.groupListCV.delegate = self
-        self.groupListCV.dataSource = self
-    }
-    
-    private func setAutoLayout(){
-        containerView.snp.makeConstraints { make in
-            make.edges.equalTo(self.view.safeAreaLayoutGuide)
-        }
-        scheduleView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
-        }
-        groupListCV.snp.makeConstraints { make in
-            make.top.equalTo(scheduleView.snp.bottom)
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(16)
-            make.right.equalToSuperview().offset(-16)
-        }
-        
-    }
 }
 extension HomeVC : UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -172,6 +144,42 @@ extension HomeVC : UICollectionViewDelegate{
         self.navigationController?.pushViewController(groupTextListVC, animated: false)
     }
 }
+
+//MARK: - 함수
+extension HomeVC {
+    private func setAddSubView(){
+        
+        self.view.addSubview(self.containerView)
+        self.containerView.addSubview(scheduleView)
+        self.containerView.addSubview(groupListCV)
+        
+    }
+    private func setCV(){
+        self.groupListCV.delegate = self
+        self.groupListCV.dataSource = self
+    }
+    
+    private func setAutoLayout(){
+        containerView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        scheduleView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+        }
+        groupListCV.snp.makeConstraints { make in
+            make.top.equalTo(scheduleView.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+    }
+    @objc private func didTapLogo(){
+        let setGroupVC = LoginVC()
+        setGroupVC.modalPresentationStyle = .fullScreen
+        self.present(setGroupVC, animated: true)
+    }
+}
+
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI

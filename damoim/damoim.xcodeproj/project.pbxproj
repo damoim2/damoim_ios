@@ -49,6 +49,7 @@
 		F8C05A592995431B001719A9 /* damoimUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */; };
 		F8C126DE29EEAADE008D216A /* ExtensionCATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126DD29EEAADE008D216A /* ExtensionCATransition.swift */; };
 		F8C126E429EEB876008D216A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126E329EEB876008D216A /* LoginVC.swift */; };
+		F8C126E629EEBD9B008D216A /* Extension UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126E529EEBD9B008D216A /* Extension UIColor.swift */; };
 		F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62329DACF49007ADC1B /* CommentTVC.swift */; };
 		F8D2A62629DACFA2007ADC1B /* CommentTVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */; };
 		F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */; };
@@ -117,6 +118,7 @@
 		F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = damoimUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F8C126DD29EEAADE008D216A /* ExtensionCATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCATransition.swift; sourceTree = "<group>"; };
 		F8C126E329EEB876008D216A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F8C126E529EEBD9B008D216A /* Extension UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIColor.swift"; sourceTree = "<group>"; };
 		F8D2A62329DACF49007ADC1B /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVH.swift; sourceTree = "<group>"; };
 		F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCellHeader.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */,
 				F83C560829C21A4700535CBE /* ExtensionUILabel.swift */,
 				F8C126DD29EEAADE008D216A /* ExtensionCATransition.swift */,
+				F8C126E529EEBD9B008D216A /* Extension UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
 				F8D2A62629DACFA2007ADC1B /* CommentTVH.swift in Sources */,
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
+				F8C126E629EEBD9B008D216A /* Extension UIColor.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
 				F8C126E429EEB876008D216A /* LoginVC.swift in Sources */,
 				F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */,
