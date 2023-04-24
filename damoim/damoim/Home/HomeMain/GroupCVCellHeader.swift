@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class GroupCVCellHeader: UICollectionReusableView {
+   
     static let identi = "GroupCVCellHeaderid"
     var gridThreeAction :(() -> ())?
     var gridTwoAction :(() -> ())?
@@ -31,12 +32,15 @@ class GroupCVCellHeader: UICollectionReusableView {
         stackView.spacing = 6
         return stackView
     }()
+   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setAddSubView()
         setAutoLayout()
         self.threeGridUIButton.addTarget(self, action: #selector(tapThreeGrid), for: .touchUpInside)
         self.twoGridUIButton.addTarget(self, action: #selector(tapTwoGrid), for: .touchUpInside)
+        
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -75,8 +79,10 @@ class GroupCVCellHeader: UICollectionReusableView {
         buttonStackView.addArrangedSubview(threeGridUIButton)
     }
     func setAutoLayout(){
+      
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+            
         }
         groupLabel.snp.makeConstraints { make in
             make.top.equalTo(containerView.snp.top)
@@ -92,5 +98,6 @@ class GroupCVCellHeader: UICollectionReusableView {
         }
         
     }
+   
     
 }

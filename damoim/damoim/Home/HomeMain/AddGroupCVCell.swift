@@ -42,7 +42,7 @@ class AddGroupCVCell: UICollectionViewCell {
     func setFooterView(){
         addSubview(containerView)
         containerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
+            make.top.equalToSuperview()
             make.left.bottom.right.equalToSuperview()
         }
         containerView.addSubview(addGroupButton)
