@@ -25,14 +25,7 @@ class ScheduleView: UIView {
         textLabel.font = UIFont(name: CustomFont.SemiBold.rawValue, size: 13)
         return textLabel
     }()
-  
-    private lazy var scheduleSegmented : CustomSegmentedControl = {
-        let scheduleSegmented = CustomSegmentedControl()
-        scheduleSegmented.setButtonTitles(buttonTitles: [ScheduleData(day: "월", date: "10"),ScheduleData(day: "화", date: "11"),ScheduleData(day: "수", date: "12"),ScheduleData(day: "목", date: "13"),ScheduleData(day: "금", date: "14")])
-        scheduleSegmented.selectorTextColor = UIColor(named: "grey06")!
-        scheduleSegmented.selectorViewColor = UIColor(named: "purple01")!
-        return scheduleSegmented
-    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setScheduleView()
@@ -49,7 +42,6 @@ class ScheduleView: UIView {
         addSubview(containerView)
         addSubview(damoimLogo)
         addSubview(scheduleLabel)
-        addSubview(scheduleSegmented)
         containerView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
         }
@@ -60,14 +52,7 @@ class ScheduleView: UIView {
         scheduleLabel.snp.makeConstraints { make in
             make.top.equalTo(damoimLogo.snp.bottom).offset(16)
             make.left.equalToSuperview().offset(16)
-            
-        }
-        scheduleSegmented.backgroundColor = .clear
-        scheduleSegmented.snp.makeConstraints { make in
-            make.top.equalTo(scheduleLabel.snp.bottom).offset(16)
-            make.left.equalToSuperview().offset(16)
-            make.right.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-14)
+            make.bottom.equalToSuperview().offset(-16)
         }
     }
   

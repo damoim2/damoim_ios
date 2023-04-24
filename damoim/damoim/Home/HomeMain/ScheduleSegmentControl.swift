@@ -33,6 +33,15 @@ class CustomSegmentedControl: UIView {
         self.init(frame: frame)
         self.buttonTitles = buttonTitle
     }
+    //    let scheduleTableView : UITableView = {
+    //       let scheduleTableView = UITableView()
+    //        return scheduleTableView
+    //    }()
+    let testView : UIView = {
+        let testView = UIView()
+        testView.backgroundColor = .red
+        return testView
+    }()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
@@ -45,12 +54,10 @@ class CustomSegmentedControl: UIView {
         self.updateView()
     }
     
-    func setIndex(index:Int) {
-        buttons.forEach({ $0.setTitleColor(textColor, for: .normal) })
-        selectedIndex = index
-
-        
-    }
+    //    func setIndex(index:Int) {
+    //        buttons.forEach({ $0.setTitleColor(textColor, for: .normal) })
+    //        selectedIndex = index
+    //    }
     
     @objc func buttonAction(sender:UIButton) {
         for (buttonIndex, btn) in buttons.enumerated() {
@@ -61,7 +68,20 @@ class CustomSegmentedControl: UIView {
                 config?.baseForegroundColor = UIColor(named: "grey06")
                 btn.configuration = config
                 btn.backgroundColor = selectorViewColor
-                
+                switch selectedIndex {
+                case 0:
+                    testView.backgroundColor = .red
+                case 1:
+                    testView.backgroundColor = .orange
+                case 2:
+                    testView.backgroundColor = .yellow
+                case 3:
+                    testView.backgroundColor = .green
+                case 4:
+                    testView.backgroundColor = .blue
+                default :
+                    testView.backgroundColor = .red
+                }
             }else {
                 var config = btn.configuration
                 config?.baseForegroundColor = UIColor(named: "grey03")
@@ -76,7 +96,7 @@ class CustomSegmentedControl: UIView {
 extension CustomSegmentedControl {
     private func updateView() {
         createButton()
-//        configSelectorView()
+        //        configSelectorView()
         configStackView()
     }
     
@@ -88,17 +108,24 @@ extension CustomSegmentedControl {
         stack.spacing = 6
         addSubview(stack)
         stack.snp.makeConstraints { make in
-            make.edges.equalTo(self)
+            make.top.left.right.equalTo(self)
         }
-
+        addSubview(testView)
+        testView.snp.makeConstraints { make in
+            make.top.equalTo(stack.snp.bottom)
+            make.left.right.equalTo(self)
+        }
+        
     }
-    
-    private func configSelectorView() {
-        let selectorWidth = frame.width / CGFloat(self.buttonTitles.count)
-        selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height, width: selectorWidth, height: 2))
-        selectorView.backgroundColor = selectorViewColor
-        addSubview(selectorView)
+    private func setTableView(){
+        
     }
+    //    private func configSelectorView() {
+    //        let selectorWidth = frame.width / CGFloat(self.buttonTitles.count)
+    //        selectorView = UIView(frame: CGRect(x: 0, y: self.frame.height, width: selectorWidth, height: 2))
+    //        selectorView.backgroundColor = selectorViewColor
+    //        addSubview(selectorView)
+    //    }
     
     private func createButton() {
         buttons = [UIButton]()
@@ -109,6 +136,7 @@ extension CustomSegmentedControl {
             config.attributedTitle = AttributedString(buttonTitle.day, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Medium.rawValue, size: 13)!]))
             config.attributedSubtitle = AttributedString(buttonTitle.date, attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Bold.rawValue, size: 17)!]))
             config.baseForegroundColor = UIColor(named: "grey03")
+            config.titleAlignment = .center
             let scheduleButton = UIButton(configuration: config)
             scheduleButton.addTarget(self, action: #selector(CustomSegmentedControl.buttonAction(sender:)), for: .touchUpInside)
             scheduleButton.layer.cornerRadius = 8

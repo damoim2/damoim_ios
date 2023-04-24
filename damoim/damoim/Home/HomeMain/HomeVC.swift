@@ -19,6 +19,14 @@ class HomeVC: UIViewController {
         scheduleView.damoimLogo.addTarget(self, action: #selector(didTapLogo), for: .touchUpInside)
         return scheduleView
     }()
+    private lazy var scheduleBtnStackView : UIStackView = {
+        let stackView = UIStackView()
+        return stackView
+    }()
+    private lazy var scheduleTableView : UITableView = {
+        let tableView = UITableView()
+        return tableView
+    }()
     private lazy var containerView : UIView = {
         let containerView = UIView()
         containerView.backgroundColor = UIColor(named: "grey05")
