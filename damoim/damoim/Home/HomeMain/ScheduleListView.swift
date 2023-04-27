@@ -1,10 +1,11 @@
 //
-//  ScheduleList.swift
+//  ScheduleListView.swift
 //  damoim
 //
-//  Created by 원동진 on 2023/04/24.
+//  Created by 원동진 on 2023/04/27.
 //
 
+import Foundation
 import UIKit
 
 class ScheduleList: UIView {
