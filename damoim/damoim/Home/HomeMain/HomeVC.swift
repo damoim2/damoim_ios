@@ -25,7 +25,7 @@ class HomeVC: UIViewController {
     let dateSample = [ExampleDate(date: "월", day: "11"),ExampleDate(date: "화", day: "12"),ExampleDate(date: "수", day: "13"),ExampleDate(date: "목", day: "14"),ExampleDate(date: "금", day: "15")]
     var scSample : [ExampleScData] = []
 //    scSample = [ExampleScData(groupName: "모임001", groupImg: UIImage(named: "scTest1")!, date: "10월 10일 목요일", time: "오후 6:30")]
-    let sample = (1...3).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "계모임 이름")}
+    let sample = (1...8).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "계모임 이름")}
     private var buttons: [UIButton]!
     var moreBtnState : Bool = false // more 했을경우 True
     var selectedIndex : Int = 0
