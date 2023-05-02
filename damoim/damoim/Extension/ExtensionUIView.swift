@@ -7,6 +7,18 @@
 
 import Foundation
 import UIKit
+extension UIView {
+    func setChangeFont(changeLabel: UILabel,fontName : String,fontSize:CGFloat,targetStriong : String){
+        let fullText = changeLabel.text ?? ""
+        let attFont = UIFont(name: fontName, size: fontSize)
+        let attributedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: targetStriong)
+        attributedString.addAttribute(.font, value: attFont!, range: range)
+        changeLabel.attributedText = attributedString
+        
+    }
+}
+
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 extension UIView {
@@ -26,14 +38,6 @@ extension UIView {
     func showPreview() -> some View {
         Preview(view: self).previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
     }
-    func setChangeFont(changeLabel: UILabel,fontName : String,fontSize:CGFloat,targetStriong : String){
-        let fullText = changeLabel.text ?? ""
-        let attFont = UIFont(name: fontName, size: fontSize)
-        let attributedString = NSMutableAttributedString(string: fullText)
-        let range = (fullText as NSString).range(of: targetStriong)
-        attributedString.addAttribute(.font, value: attFont!, range: range)
-        changeLabel.attributedText = attributedString
-        
-    }
+    
 }
 #endif

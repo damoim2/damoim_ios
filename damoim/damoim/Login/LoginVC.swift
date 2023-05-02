@@ -42,17 +42,22 @@ class LoginVC: UIViewController {
         return loginStackView
     }()
     private lazy var googleBtn : UIButton = {
-        let googleBtn = UIButton()
-        googleBtn.setImage(UIImage(named: "google"), for: .normal)
+        var config = UIButton.Configuration.plain()
+        config.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        config.image = UIImage(named: "google")
+        let googleBtn = UIButton(configuration: config)
         googleBtn.layer.shadowColor = UIColor.black.cgColor
         googleBtn.layer.shadowOpacity = 0.1
         googleBtn.layer.shadowOffset = CGSize.zero
         googleBtn.layer.shadowRadius = 2
+        googleBtn.addTarget(self, action: #selector(tempAction), for: .touchUpInside)
         return googleBtn
     }()
     private lazy var appleBtn : UIButton = {
-        let appleBtn = UIButton()
-        appleBtn.setImage(UIImage(named: "apple"), for: .normal)
+        var config = UIButton.Configuration.plain()
+        config.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        config.image = UIImage(named: "apple")
+        let appleBtn = UIButton(configuration: config)
         appleBtn.layer.shadowColor = UIColor.black.cgColor
         appleBtn.layer.shadowOpacity = 0.1
         appleBtn.layer.shadowOffset = CGSize.zero
@@ -60,8 +65,10 @@ class LoginVC: UIViewController {
         return appleBtn
     }()
     private lazy var kakaoBtn : UIButton = {
-        let kakaoBtn = UIButton()
-        kakaoBtn.setImage(UIImage(named: "kakao"), for: .normal)
+        var config = UIButton.Configuration.plain()
+        config.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        config.image = UIImage(named: "kakao")
+        let kakaoBtn = UIButton(configuration: config)
         kakaoBtn.layer.shadowColor = UIColor.black.cgColor
         kakaoBtn.layer.shadowOpacity = 0.1
         kakaoBtn.layer.shadowOffset = CGSize.zero
@@ -124,6 +131,12 @@ extension LoginVC {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         self.view.layer.addSublayer(gradientLayer)
+    }
+    @objc func tempAction(){
+        let vc = SignUpVC()
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
+      
     }
     
 }

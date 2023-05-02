@@ -6,7 +6,21 @@
 //
 
 import UIKit
-
+//extension UILabel {
+//    func paddingLabel(top:CGFloat,left:CGFloat,bottom:CGFloat,right:CGFloat){
+//        private var padding = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
+//        func drawText(in rect: CGRect) {
+//            super.drawText(in: rect.inset(by: padding))
+//        }
+//        var intrinsicContentSize: CGSize {
+//            var contentSize = super.intrinsicContentSize
+//            contentSize.height += padding.top + padding.bottom
+//            contentSize.width += padding.left + padding.right
+//
+//            return contentSize
+//        }
+//    }
+//}
 class BasePaddingLabel : UILabel {
     private var padding = UIEdgeInsets(top: 2.0, left: 2.0, bottom: 2.0, right: 2.0)
     convenience init(padding: UIEdgeInsets) {

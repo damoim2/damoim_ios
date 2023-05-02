@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo_text@2x 1.svg",
+      "filename" : "check box.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo_text@2x-1.svg",
+      "filename" : "check box@2x.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo_text@3x.svg",
+      "filename" : "check box@3x.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
