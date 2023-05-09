@@ -25,7 +25,7 @@ class HomeVC: UIViewController {
     let dateSample = [ExampleDate(date: "월", day: "11"),ExampleDate(date: "화", day: "12"),ExampleDate(date: "수", day: "13"),ExampleDate(date: "목", day: "14"),ExampleDate(date: "금", day: "15")]
     var scSample : [ExampleScData] = []
 //    scSample = [ExampleScData(groupName: "모임001", groupImg: UIImage(named: "scTest1")!, date: "10월 10일 목요일", time: "오후 6:30")]
-    let sample = (1...8).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "계모임 이름")}
+    let sample = (1...9).map{_ in return ExampleCVItem(groupImage: UIImage(named: "testImg"), groupName: "계모임 이름")}
     private var buttons: [UIButton]!
     var moreBtnState : Bool = false // more 했을경우 True
     var selectedIndex : Int = 0
@@ -121,11 +121,25 @@ extension HomeVC : UICollectionViewDataSource {
         return self.sample.count + 1
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == self.sample.count{
-            let addGroupCell = collectionView.dequeueReusableCell(withReuseIdentifier: AddGroupCVCell.identi, for: indexPath) as! AddGroupCVCell
+        let groupCell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCVCell.identi, for: indexPath) as! GroupCVCell
+        let addGroupCell = collectionView.dequeueReusableCell(withReuseIdentifier: AddGroupCVCell.identi, for: indexPath) as! AddGroupCVCell
+        if indexPath.row == self.sample.count{ // 모임만들기 버튼일경우
+            if gridFlowLayout.numberOfColumns == 2{
+                if self.sample.count % 2 == 1{
+                    addGroupCell.groupImageSameBtn(same: true)
+                }else{
+                    addGroupCell.groupImageSameBtn(same: false)
+                }
+                
+            }else if gridFlowLayout.numberOfColumns == 3{
+                if self.sample.count % 3 == 0{
+                    addGroupCell.groupImageSameBtn(same: false)
+                }else{
+                    addGroupCell.groupImageSameBtn(same: true)
+                }
+            }
             return addGroupCell
         }else {
-            let groupCell = collectionView.dequeueReusableCell(withReuseIdentifier: GroupCVCell.identi, for: indexPath) as! GroupCVCell
             groupCell.groupImgView.layer.cornerRadius = 16
             groupCell.groupImgView.layer.masksToBounds = true
             groupCell.prepare(model: self.sample[indexPath.row])
