@@ -150,6 +150,8 @@ class SignUpVC: UIViewController {
         self.view.backgroundColor = UIColor(named: "grey06")
         addSubView()
         setAutoLayout()
+        
+        
     }
     
 }
@@ -259,7 +261,6 @@ extension SignUpVC {
         
     }
     @objc func nextBtnAction(){
-        //temp
         let vc = TermsOfSurviceVC()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)

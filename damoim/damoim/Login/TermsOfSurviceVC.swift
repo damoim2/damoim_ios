@@ -45,12 +45,14 @@ class TermsOfSurviceVC: UIViewController {
     private lazy var useTermView : UseAgreeView = {
         let useTermView = UseAgreeView()
         useTermView.setTitle("이용약관")
+        useTermView.agreeBtn.addTarget(self, action: #selector(tapUseTemrBtn), for: .touchUpInside)
         return useTermView
     }()
     //개인 정보 처리방침
     private lazy var personalInfoView : UseAgreeView = {
         let useTermView = UseAgreeView()
         useTermView.setTitle("개인정보 처리방침")
+        useTermView.agreeBtn.addTarget(self, action: #selector(tapPesonaInfoBtn), for: .touchUpInside)
         return useTermView
     }()
     // 마켓팅 수신 동의
@@ -83,7 +85,7 @@ class TermsOfSurviceVC: UIViewController {
     }()
     private lazy var nextBtn : NextBtn = {
         let nextBtn = NextBtn()
-
+        nextBtn.addTarget(self, action: #selector(tapNextBtn), for: .touchUpInside)
         return nextBtn
     }()
     override func viewDidLoad() {
@@ -147,22 +149,39 @@ extension TermsOfSurviceVC {
             make.bottom.equalTo(self.view.snp.bottom).offset(-34)
         }
     }
+    @objc func tapUseTemrBtn(_ sender : UIButton){
+        if sender.isSelected && personalInfoView.agreeBtn.isSelected{
+            nextBtn.backgroundColor = UIColor(named: "purple01")
+        }else {
+            nextBtn.backgroundColor = UIColor(named: "grey04")
+        }
+    }
+    @objc func tapPesonaInfoBtn(_ sender : UIButton){
+        if sender.isSelected && useTermView.agreeBtn.isSelected{
+            nextBtn.backgroundColor = UIColor(named: "purple01")
+        }else {
+            nextBtn.backgroundColor = UIColor(named: "grey04")
+        }
+    }
+    @objc func tapNextBtn(){    
+    }
     @objc func tapAllAgreeBtn(_ sender : UIButton){
         if sender.isSelected {
             [useTermView,personalInfoView].forEach { view in
                 view.agreeBtn.isSelected = true
             }
             agreeBtn.isSelected = true
+            nextBtn.backgroundColor = UIColor(named: "purple01")
         }else{
             [useTermView,personalInfoView].forEach { view in
                 view.agreeBtn.isSelected = false
             }
             agreeBtn.isSelected = false
+            nextBtn.backgroundColor = UIColor(named: "grey04")
         }
         
-        
-        
     }
+  
     private func setCheckBoxAction(){
         [allAgreeBtn,agreeBtn].forEach { btn in
             btn.configurationUpdateHandler = { btn in
@@ -171,6 +190,7 @@ extension TermsOfSurviceVC {
                 config?.baseBackgroundColor = .clear
                 btn.configuration = config
             }
+            
         }
     }
 }
