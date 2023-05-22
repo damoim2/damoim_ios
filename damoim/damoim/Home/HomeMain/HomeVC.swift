@@ -125,7 +125,7 @@ extension HomeVC : UICollectionViewDataSource {
         let addGroupCell = collectionView.dequeueReusableCell(withReuseIdentifier: AddGroupCVCell.identi, for: indexPath) as! AddGroupCVCell
         if indexPath.row == self.sample.count{ // 모임만들기 버튼일경우
             if gridFlowLayout.numberOfColumns == 2{
-                if self.sample.count % 2 == 1{
+                if self.sample.count % 2 == 1 {
                     addGroupCell.groupImageSameBtn(same: true)
                 }else{
                     addGroupCell.groupImageSameBtn(same: false)
@@ -195,6 +195,7 @@ extension HomeVC : UICollectionViewDelegate{
         self.navigationController?.pushViewController(groupTextListVC, animated: false)
     }
 }
+//MARK: - func
 extension HomeVC {
     private func setAddSubView(){
         self.view.addSubview(scheduleView)

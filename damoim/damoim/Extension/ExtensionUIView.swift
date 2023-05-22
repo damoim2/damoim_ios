@@ -13,6 +13,9 @@ extension UIView {
         layer.cornerRadius = cornerRadius
         layer.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
     }
+    func addSubViews(_ views : [UIView]){
+        _ = views.map{self.addSubview($0)}
+    }
 }
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
