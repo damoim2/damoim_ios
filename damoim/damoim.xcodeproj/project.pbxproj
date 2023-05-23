@@ -26,11 +26,12 @@
 		F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125D299CE9FA0007C177 /* CalendarVC.swift */; };
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
+		F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */; };
+		F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */; };
 		F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */; };
 		F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */; };
-		F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
-		F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077829B0DB1400522B35 /* ScheduleView.swift */; };
+		F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */; };
 		F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */; };
 		F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */; };
 		F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC8129A4D91300887727 /* GroupCVCell.swift */; };
@@ -47,6 +48,9 @@
 		F8C05A4D2995431B001719A9 /* damoimTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A4C2995431B001719A9 /* damoimTests.swift */; };
 		F8C05A572995431B001719A9 /* damoimUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A562995431B001719A9 /* damoimUITests.swift */; };
 		F8C05A592995431B001719A9 /* damoimUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */; };
+		F8C126DE29EEAADE008D216A /* ExtensionCATransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126DD29EEAADE008D216A /* ExtensionCATransition.swift */; };
+		F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62329DACF49007ADC1B /* CommentTVC.swift */; };
+		F8D2A62629DACFA2007ADC1B /* CommentTVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */; };
 		F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,11 +90,12 @@
 		F841125D299CE9FA0007C177 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
+		F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
 		F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextVC.swift; sourceTree = "<group>"; };
 		F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButton.swift; sourceTree = "<group>"; };
-		F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSegmentControl.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
-		F870077829B0DB1400522B35 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgDetailModalVC.swift; sourceTree = "<group>"; };
 		F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyaccountTVC.swift; sourceTree = "<group>"; };
 		F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionVFL.swift; sourceTree = "<group>"; };
 		F889FC8129A4D91300887727 /* GroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCell.swift; sourceTree = "<group>"; };
@@ -111,6 +116,9 @@
 		F8C05A522995431B001719A9 /* damoimUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = damoimUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C05A562995431B001719A9 /* damoimUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = damoimUITests.swift; sourceTree = "<group>"; };
 		F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = damoimUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8C126DD29EEAADE008D216A /* ExtensionCATransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCATransition.swift; sourceTree = "<group>"; };
+		F8D2A62329DACF49007ADC1B /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
+		F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVH.swift; sourceTree = "<group>"; };
 		F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +155,8 @@
 				F83FD1E429B4BD4100215F8B /* ExtensionUIView.swift */,
 				F8AB469329BF0DA7003E405D /* ExtensionUIViewController.swift */,
 				F83C560829C21A4700535CBE /* ExtensionUILabel.swift */,
+				F8C126DD29EEAADE008D216A /* ExtensionCATransition.swift */,
+				F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -187,18 +197,12 @@
 		F841125F299CEA140007C177 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F866B34329DAEB3C00F8B06D /* HomeMain */,
 				F84575B72A1C972000AEDAB7 /* WriteText */,
 				F8B20A8C29C842510021F9F4 /* TextDeatil */,
 				F83FD1DB29B4A68600215F8B /* SetGroup */,
 				F83FD1DA29B4A67100215F8B /* TextList */,
 				F862E9E429B1FD1900DA0515 /* NotUsed */,
-				F8C05A392995431A001719A9 /* HomeVC.swift */,
-				F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */,
-				F889FC8129A4D91300887727 /* GroupCVCell.swift */,
-				F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */,
-				F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */,
-				F870077829B0DB1400522B35 /* ScheduleView.swift */,
-				F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -246,10 +250,25 @@
 			path = NotUsed;
 			sourceTree = "<group>";
 		};
+		F866B34329DAEB3C00F8B06D /* HomeMain */ = {
+			isa = PBXGroup;
+			children = (
+				F8C05A392995431A001719A9 /* HomeVC.swift */,
+				F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */,
+				F889FC8129A4D91300887727 /* GroupCVCell.swift */,
+				F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */,
+				F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */,
+				F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */,
+			);
+			path = HomeMain;
+			sourceTree = "<group>";
+		};
 		F8B20A8C29C842510021F9F4 /* TextDeatil */ = {
 			isa = PBXGroup;
 			children = (
+				F8D2A62229DACF27007ADC1B /* Comment */,
 				F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */,
+				F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */,
 			);
 			path = TextDeatil;
 			sourceTree = "<group>";
@@ -308,6 +327,15 @@
 				F8C05A582995431B001719A9 /* damoimUITestsLaunchTests.swift */,
 			);
 			path = damoimUITests;
+			sourceTree = "<group>";
+		};
+		F8D2A62229DACF27007ADC1B /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */,
+				F8D2A62329DACF49007ADC1B /* CommentTVC.swift */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,19 +484,21 @@
 				F8AB469429BF0DA7003E405D /* ExtensionUIViewController.swift in Sources */,
 				F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */,
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
+				F8D2A62629DACFA2007ADC1B /* CommentTVH.swift in Sources */,
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
+				F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */,
 				F83FD1E529B4BD4100215F8B /* ExtensionUIView.swift in Sources */,
 				F8C05A3A2995431A001719A9 /* HomeVC.swift in Sources */,
+				F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */,
 				F8B20A8E29C842680021F9F4 /* TextDetailVC.swift in Sources */,
-				F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */,
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
 				F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
 				F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */,
-				F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */,
+				F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */,
 				F83C560729C2132100535CBE /* TextListTVCType2.swift in Sources */,
 				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
 				F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */,
@@ -476,9 +506,11 @@
 				F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */,
 				F83FD1DF29B4B8D900215F8B /* SetGroupVC.swift in Sources */,
 				F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */,
+				F8C126DE29EEAADE008D216A /* ExtensionCATransition.swift in Sources */,
 				F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */,
 				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,
 				F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */,
+				F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */,
 				F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */,
 				F8AB469629BF1213003E405D /* UserWriteInfoView.swift in Sources */,
 			);

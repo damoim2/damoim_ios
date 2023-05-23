@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "mario-purisic-jG1z5o7NCq4-unsplash 1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

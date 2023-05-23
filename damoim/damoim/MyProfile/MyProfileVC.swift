@@ -29,6 +29,7 @@ class MyProfileVC: UIViewController {
         view.userImgView.layer.masksToBounds = true
         return view
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()
@@ -105,23 +106,11 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
  
     
 }
+#if canImport(SwiftUI) && DEBUG
 import SwiftUI
-@available(iOS 13.0.0, *)
-struct MyProfileVCRepresentable: UIViewControllerRepresentable {
-    typealias UIViewControllerType = MyProfileVC
-    
-    func makeUIViewController(context: Context) -> MyProfileVC {
-        return MyProfileVC()
-    }
-    
-    func updateUIViewController(_ uiViewController: MyProfileVC, context: Context) {
-    }
-    
-}
 struct MyProfileVCPreview: PreviewProvider {
     static var previews: some View {
-        MyProfileVCRepresentable()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
-            .previewDisplayName("iPhone 14 Pro")
+        MyProfileVC().showPreview(.iPhone14Pro)
     }
 }
+#endif
