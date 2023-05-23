@@ -26,6 +26,7 @@
 		F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125D299CE9FA0007C177 /* CalendarVC.swift */; };
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
+		F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */; };
 		F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */; };
 		F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
@@ -85,6 +86,7 @@
 		F841125D299CE9FA0007C177 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextVC.swift; sourceTree = "<group>"; };
 		F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButton.swift; sourceTree = "<group>"; };
 		F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSegmentControl.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		F841125F299CEA140007C177 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F84575B72A1C972000AEDAB7 /* WriteText */,
 				F8B20A8C29C842510021F9F4 /* TextDeatil */,
 				F83FD1DB29B4A68600215F8B /* SetGroup */,
 				F83FD1DA29B4A67100215F8B /* TextList */,
@@ -225,6 +228,14 @@
 				F88A430D29A3BBB6006D146B /* UserInfoView.swift */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		F84575B72A1C972000AEDAB7 /* WriteText */ = {
+			isa = PBXGroup;
+			children = (
+				F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */,
+			);
+			path = WriteText;
 			sourceTree = "<group>";
 		};
 		F862E9E429B1FD1900DA0515 /* NotUsed */ = {
@@ -454,6 +465,7 @@
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
+				F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
 				F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */,
 				F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */,
