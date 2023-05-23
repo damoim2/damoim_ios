@@ -321,7 +321,6 @@ extension HomeVC {
         }
     }
     @objc func tapLogo(){
-        print("tap")
         let vc =  LoginVC() 
         self.present(vc, animated: true)
     }
