@@ -43,13 +43,14 @@ class GroupInfoView: UIView {
     }()
     private lazy var memberCntLabel = customLabel("멤버 8")
     
+    
     private lazy var duringGroupCntLabel = customLabel("D+123")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addsubView()
         setAutoLayout()
-        setGroupHeadLabel()
+        setChangeLabelFont()
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -91,13 +92,9 @@ extension GroupInfoView {
             make.bottom.equalToSuperview()
         }
     }
-    private func setGroupHeadLabel(){
-        let fullText = groupHeadLabel.text ?? ""
-        let attFont = UIFont(name: CustomFont.SemiBold.rawValue, size: 13)
-        let attributedString = NSMutableAttributedString(string: fullText)
-        let range = (fullText as NSString).range(of: "이아리")
-        attributedString.addAttribute(.font, value: attFont!, range: range)
-        groupHeadLabel.attributedText = attributedString
+    private func setChangeLabelFont(){
+        setChangeFont(changeLabel: memberCntLabel, fontName: CustomFont.Regular.rawValue, fontSize: 13, targetStriong: "멤버")
+        setChangeFont(changeLabel: groupHeadLabel, fontName: CustomFont.SemiBold.rawValue, fontSize: 13, targetStriong: "이아리")
     }
     func customLabel(_ text : String)-> BasePaddingLabel{
         let customLabel : BasePaddingLabel = {

@@ -25,8 +25,18 @@ class SetGroupVC: UIViewController {
         tableView.bounces = false
         tableView.register(SetGroupTVC.self, forCellReuseIdentifier: SetGroupTVC.identi)
         tableView.separatorStyle = .none
-        tableView.sectionHeaderHeight = 0
+        tableView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
+        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
         return tableView
+    }()
+    private lazy var groupDeleteButton : UIButton = {
+        var config = UIButton.Configuration.plain()
+        config.attributedTitle = AttributedString("모임 삭제 하기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Medium.rawValue, size: 15)!]))
+        config.baseForegroundColor = UIColor(named: "grey03")
+        let groupDeleteButton = UIButton(configuration: config)
+        groupDeleteButton.backgroundColor = UIColor(named: "grey04")
+        groupDeleteButton.layer.cornerRadius = 8
+        return groupDeleteButton
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +62,7 @@ extension SetGroupVC {
     private func addSubView(){
         self.view.addSubview(groupInfoView)
         self.view.addSubview(groupSetTableView)
+        self.view.addSubview(groupDeleteButton)
         
     }
     private func setAutoLayout(){
@@ -61,6 +72,10 @@ extension SetGroupVC {
         groupSetTableView.snp.makeConstraints { make in
             make.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(groupInfoView.snp.bottom).offset(8)
+        }
+        groupDeleteButton.snp.makeConstraints { make in
+            make.right.equalTo(view.snp.right).offset(-16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-34)
         }
         
     }
@@ -78,29 +93,22 @@ extension SetGroupVC : UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 35
     }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
 }
 extension SetGroupVC : dismissActionDelegate {
     func dissmissAction(){
-        self.presentingViewController?.dismiss(animated: true)
+        let transition = CATransition().segueFromLeft()
+        view.window?.layer.add(transition, forKey: kCATransition)
+        dismiss(animated: false)
     }
 }
+#if canImport(SwiftUI) && DEBUG
 import SwiftUI
-@available(iOS 13.0.0, *)
-struct SetGroupVCRepresentable: UIViewControllerRepresentable {
-    typealias UIViewControllerType = SetGroupVC
-    
-    func makeUIViewController(context: Context) -> SetGroupVC {
-        return SetGroupVC()
-    }
-    
-    func updateUIViewController(_ uiViewController: SetGroupVC, context: Context) {
-    }
-    
-}
 struct SetGroupVCPreview: PreviewProvider {
     static var previews: some View {
-        SetGroupVCRepresentable()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
-            .previewDisplayName("iPhone 14 Pro")
+        SetGroupVC().showPreview(.iPhone14Pro)
     }
 }
+#endif

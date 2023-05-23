@@ -3,7 +3,7 @@
 //  damoim
 //
 //  Created by 원동진 on 2023/02/15.
-//
+// fix
 
 import Foundation
 import UIKit
@@ -13,10 +13,12 @@ class MyProfileVC: UIViewController {
     var myProfileTableView : UITableView = {
         let tableView =  UITableView(frame: .zero, style: .insetGrouped)
         tableView.bounces = false
+        tableView.sectionHeaderHeight = CGFloat.leastNormalMagnitude
+        tableView.sectionFooterHeight = CGFloat.leastNormalMagnitude
         tableView.register(MyProfileTVC.self, forCellReuseIdentifier: MyProfileTVC.identi)
         tableView.register(MyaccountTVC.self, forCellReuseIdentifier: MyaccountTVC.identi)
         tableView.separatorStyle = .none
-        tableView.sectionHeaderHeight = 0
+        
         return tableView
     }()
     var userInfoView : UserInfoView = {
@@ -27,6 +29,7 @@ class MyProfileVC: UIViewController {
         view.userImgView.layer.masksToBounds = true
         return view
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()
@@ -80,6 +83,7 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
         return 2
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let profileCell = tableView.dequeueReusableCell(withIdentifier: MyProfileTVC.identi, for: indexPath) as? MyProfileTVC else {return UITableViewCell()}
         guard let accuntCell = tableView.dequeueReusableCell(withIdentifier: MyaccountTVC.identi, for: indexPath) as? MyaccountTVC else {return UITableViewCell()}
@@ -95,28 +99,18 @@ extension MyProfileVC : UITableViewDataSource,UITableViewDelegate{
         
         return profileCell
     }
-    
-  
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 8
+    }
+
  
     
 }
+#if canImport(SwiftUI) && DEBUG
 import SwiftUI
-@available(iOS 13.0.0, *)
-struct MyProfileVCRepresentable: UIViewControllerRepresentable {
-    typealias UIViewControllerType = MyProfileVC
-    
-    func makeUIViewController(context: Context) -> MyProfileVC {
-        return MyProfileVC()
-    }
-    
-    func updateUIViewController(_ uiViewController: MyProfileVC, context: Context) {
-    }
-    
-}
 struct MyProfileVCPreview: PreviewProvider {
     static var previews: some View {
-        MyProfileVCRepresentable()
-            .previewDevice(PreviewDevice(rawValue: "iPhone 14 Pro"))
-            .previewDisplayName("iPhone 14 Pro")
+        MyProfileVC().showPreview(.iPhone14Pro)
     }
 }
+#endif

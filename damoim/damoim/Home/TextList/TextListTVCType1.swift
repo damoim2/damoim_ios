@@ -32,6 +32,8 @@ class TextListTVCType1: UITableViewCell {
     }()
     private lazy var userImageView : UIImageView = {
         let userImage = UIImageView()
+        userImage.layer.cornerRadius = 10
+        userImage.clipsToBounds = true
         return userImage
     }()
     private lazy var userNameLabel : UILabel = {
