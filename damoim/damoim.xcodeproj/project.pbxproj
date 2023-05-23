@@ -29,10 +29,11 @@
 		F84DD6CC29FA693500F829A8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6CB29FA693500F829A8 /* SignUpVC.swift */; };
 		F84DD6D029FA6D2800F829A8 /* SignInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6CF29FA6D2800F829A8 /* SignInputView.swift */; };
 		F84DD6D229FA703600F829A8 /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */; };
+		F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */; };
+		F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */; };
+		F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */; };
 		F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */; };
-		F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
-		F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077829B0DB1400522B35 /* ScheduleView.swift */; };
 		F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */; };
 		F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */; };
 		F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */ = {isa = PBXBuildFile; fileRef = F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */; };
@@ -101,10 +102,11 @@
 		F84DD6CB29FA693500F829A8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		F84DD6CF29FA6D2800F829A8 /* SignInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInputView.swift; sourceTree = "<group>"; };
 		F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTextField.swift; sourceTree = "<group>"; };
+		F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
+		F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
+		F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextVC.swift; sourceTree = "<group>"; };
 		F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButton.swift; sourceTree = "<group>"; };
-		F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleSegmentControl.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
-		F870077829B0DB1400522B35 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgDetailModalVC.swift; sourceTree = "<group>"; };
 		F889FC7D29A3BF7A00887727 /* MyaccountTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyaccountTVC.swift; sourceTree = "<group>"; };
 		F889FC7F29A4D87F00887727 /* GridCollectionVFL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionVFL.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				F8C126E529EEBD9B008D216A /* Extension UIColor.swift */,
 				F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */,
 				F893295F29FA937F00B95EE7 /* ExtensionCALayer.swift */,
+				F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F866B34329DAEB3C00F8B06D /* HomeMain */,
+				F84575B72A1C972000AEDAB7 /* WriteText */,
 				F8B20A8C29C842510021F9F4 /* TextDeatil */,
 				F83FD1DB29B4A68600215F8B /* SetGroup */,
 				F83FD1DA29B4A67100215F8B /* TextList */,
@@ -251,6 +255,14 @@
 			path = MyProfile;
 			sourceTree = "<group>";
 		};
+		F84575B72A1C972000AEDAB7 /* WriteText */ = {
+			isa = PBXGroup;
+			children = (
+				F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */,
+			);
+			path = WriteText;
+			sourceTree = "<group>";
+		};
 		F862E9E429B1FD1900DA0515 /* NotUsed */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,8 +279,7 @@
 				F889FC8129A4D91300887727 /* GroupCVCell.swift */,
 				F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */,
 				F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */,
-				F870077829B0DB1400522B35 /* ScheduleView.swift */,
-				F862E9E229B1F42400DA0515 /* ScheduleSegmentControl.swift */,
+				F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */,
 			);
 			path = HomeMain;
 			sourceTree = "<group>";
@@ -521,13 +532,13 @@
 				F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */,
 				F8ACABE42A010D2400B2AD27 /* UseAgreeView.swift in Sources */,
 				F8B20A8E29C842680021F9F4 /* TextDetailVC.swift in Sources */,
-				F870077929B0DB1400522B35 /* ScheduleView.swift in Sources */,
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
+				F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
 				F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */,
-				F862E9E329B1F42400DA0515 /* ScheduleSegmentControl.swift in Sources */,
+				F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */,
 				F83C560729C2132100535CBE /* TextListTVCType2.swift in Sources */,
 				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
 				F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */,
@@ -542,6 +553,7 @@
 				F8C05A382995431A001719A9 /* SceneDelegate.swift in Sources */,
 				F88A430E29A3BBB6006D146B /* UserInfoView.swift in Sources */,
 				F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */,
+				F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */,
 				F841125C299CE6CD0007C177 /* MainTabBarVC.swift in Sources */,
 				F8AB469629BF1213003E405D /* UserWriteInfoView.swift in Sources */,
 				F893296029FA937F00B95EE7 /* ExtensionCALayer.swift in Sources */,

@@ -6,9 +6,12 @@
 //
 
 import UIKit
-
+protocol tapTestSettingAction : AnyObject{
+    func tapTextSettingAction()
+}
 class CommentTVH: UITableViewHeaderFooterView {
     static let identi = "CommentTVH"
+    weak var taptTestSetDelegate : tapTestSettingAction?
     private lazy var textDetailView : UIView = {
         let textDetailView = UIView()
         textDetailView.backgroundColor = UIColor(named: "grey06")
@@ -63,7 +66,7 @@ class CommentTVH: UITableViewHeaderFooterView {
         모든 국민은 근로의 권리를 가진다. 국가는 사회적·경제적 방법으로 근로자의 고용의 증진과 적정임금의 보장에 노력하여야 하며, 법률이 정하는 바에 의하여 최저임금제를 시행하여야 한다. 국회의원의 수는 법률로 정하되, 200인 이상으로 한다. 국가는 과학기술의 혁신과 정보 및 인력의 개발을 통하여 국민경제의 발전에 노력하여야 한다.
         
         헌법재판소는 법률에 저촉되지 아니하는 범위안에서 심판에 관한 절차, 내부규율과 사무처리에 관한 규칙을 제정할 수 있다. 국회의원과 정부는 법률안을 제출할 수 있다. 누구든지 체포 또는 구속의 이유와 변호인의 조력을 받을 권리가 있음을 고지받지 아니하고는 체포 또는 구속을 당하지 아니한다. 체포 또는 구속을 당한 자의 가족등 법률이 정하는 자에게는 그 이유와 일시·장소가 지체없이 통지되어야 한다.
-
+        
         국회는 국정을 감사하거나 특정한 국정사안에 대하여 조사할 수 있으며, 이에 필요한 서류의 제출 또는 증인의 출석과 증언이나 의견의 진술을 요구할 수 있다. 국가의 세입·세출의 결산, 국가 및 법률이 정한 단체의 회계검사와 행정기관 및 공무원의 직무에 관한 감찰을 하기 위하여 대통령 소속하에 감사원을 둔다.
         """
         textLabel.numberOfLines = 0
@@ -71,9 +74,9 @@ class CommentTVH: UITableViewHeaderFooterView {
         textLabel.textColor = UIColor(named: "grey01")
         return textLabel
     }()
-//MARK: - 이미지
+    //MARK: - 이미지
     var upperImgView: UIView = {
-        let upperImgView = UIView()    
+        let upperImgView = UIView()
         return upperImgView
     }()
     private lazy var imgStackViewMain : UIStackView = {
@@ -140,6 +143,13 @@ class CommentTVH: UITableViewHeaderFooterView {
         likeCntLabel.font = UIFont(name: CustomFont.Regular.rawValue, size: 13)
         return likeCntLabel
     }()
+    //MARK: - 글 수정 삭제 Btn
+    private lazy var textSettingBtn : UIButton = {
+        let settingBtn = UIButton()
+        settingBtn.setImage(UIImage(named: "setCircleImg"), for: .normal)
+        settingBtn.addTarget(self, action: #selector(tapTextSettingAction), for: .touchUpInside)
+        return settingBtn
+    }()
     private lazy var borderLine : UIView = {
         let borderLine = UIView()
         borderLine.backgroundColor = UIColor(named: "grey05")
@@ -147,7 +157,7 @@ class CommentTVH: UITableViewHeaderFooterView {
     }()
     //MARK: - 댓글
     private lazy var commentStackView : UIStackView = {
-       let commentStackView = UIStackView()
+        let commentStackView = UIStackView()
         commentStackView.axis = .horizontal
         commentStackView.alignment = .fill
         commentStackView.distribution = .fillProportionally
@@ -170,8 +180,8 @@ class CommentTVH: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         addSubView()
         setAutoLayout()
-
-       
+        
+        
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -200,6 +210,8 @@ extension CommentTVH {
         textDetailView.addSubview(likeStackView)
         likeStackView.addArrangedSubview(likeImgView)
         likeStackView.addArrangedSubview(likeCntLabel)
+        //MARK: - 글 삭제 수정버튼
+        textDetailView.addSubview(textSettingBtn)
         //MARK: - 경계선
         textDetailView.addSubview(borderLine)
         //MARK: - 댓글
@@ -254,6 +266,11 @@ extension CommentTVH {
             make.top.equalTo(upperImgView.snp.bottom).offset(16)
             make.left.equalToSuperview().offset(16)
         }
+        //MARK: - 글 수정 삭제
+        textSettingBtn.snp.makeConstraints { make in
+            make.top.equalTo(upperImgView.snp.bottom).offset(16)
+            make.right.equalToSuperview().offset(-10)
+        }
         
         borderLine.snp.makeConstraints { make in
             make.top.equalTo(likeStackView.snp.bottom).offset(12)
@@ -267,6 +284,9 @@ extension CommentTVH {
             make.bottom.equalToSuperview()
         }
     }
-        
-        
+    @objc func tapTextSettingAction(){
+        self.taptTestSetDelegate?.tapTextSettingAction()
+    }
+    
+    
 }

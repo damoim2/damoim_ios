@@ -9,6 +9,14 @@ import UIKit
 import SnapKit
 class GroupCVCell: UICollectionViewCell {
     static let identi = "GroupCVCellid"
+    private lazy var upperView : UIStackView = {
+       let view = UIStackView()
+        view.axis = .vertical
+        view.distribution = .fill
+        view.alignment = .fill
+        view.spacing = 1
+        return view
+    }()
      let groupImgView : UIImageView = {
         let ImgView = UIImageView()
         ImgView.contentMode = .scaleAspectFill
@@ -41,19 +49,14 @@ class GroupCVCell: UICollectionViewCell {
 }
 extension GroupCVCell {
     private func setCell(){
-        self.contentView.addSubview(groupImgView)
-        self.contentView.addSubview(groupNameLabel)
-        groupImgView.snp.makeConstraints { make in
-            make.top.equalTo(self.contentView.snp.top)
-            make.left.equalTo(self.contentView.snp.left)
-            make.right.equalTo(self.contentView.snp.right)
+        self.contentView.addSubview(upperView)
+        upperView.addArrangedSubview(groupImgView)
+        upperView.addArrangedSubview(groupNameLabel)
+        upperView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
-        groupNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.groupImgView.snp.bottom)
-            make.left.equalTo(self.contentView.snp.left)
-            make.right.equalTo(self.contentView.snp.right)
-            make.bottom.equalTo(self.contentView.snp.bottom)
-        }
+        
     }
+    
 }
 

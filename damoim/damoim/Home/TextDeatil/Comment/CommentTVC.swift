@@ -50,7 +50,7 @@ class CommentTVC : UITableViewCell {
         let textLabel = UILabel()
         textLabel.font = UIFont(name: CustomFont.Regular.rawValue, size: 13)
         textLabel.textColor = UIColor(named: "grey01")
-        textLabel.numberOfLines = 3
+        textLabel.numberOfLines = 0
         return textLabel
     }()
     //MARK: - 답글달기 버튼

@@ -10,8 +10,12 @@ import SnapKit
 class AddGroupCVCell: UICollectionViewCell {
     static let identi = "AddGroupCVCellid"
     static var numberOfCol = 2
-    private lazy var containerView : UIView = {
-        let containerView = UIView()
+    lazy var containerView : UIStackView = {
+        let containerView = UIStackView()
+        containerView.axis = .vertical
+        containerView.distribution = .fill
+        containerView.alignment = .fill
+        containerView.spacing = 1
         return containerView
     }()
     private lazy var addGroupButton : UIButton = {
@@ -26,7 +30,13 @@ class AddGroupCVCell: UICollectionViewCell {
         addGroupButton.backgroundColor = UIColor(named: "purple04")
         return addGroupButton
     }()
-    
+    private lazy var requireConstraintLabel : UILabel = {
+       let label = UILabel()
+        label.font = UIFont(name: CustomFont.Regular.rawValue, size: 15)
+        label.text = "onlyRequireConstraint" //제약조건 맞추기 위함
+        label.textColor = .clear
+        return label
+    }()
     override init(frame: CGRect) {
         super.init(frame: frame)
         setFooterView()
@@ -41,13 +51,18 @@ class AddGroupCVCell: UICollectionViewCell {
     }
     func setFooterView(){
         addSubview(containerView)
+        containerView.addArrangedSubview(addGroupButton)
+        containerView.addArrangedSubview(requireConstraintLabel)
         containerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.left.bottom.right.equalToSuperview()
-        }
-        containerView.addSubview(addGroupButton)
-        addGroupButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
+    func groupImageSameBtn(same : Bool){ // 모임 이미지와 새모임 만드기 버튼이 같을경우
+        if same{
+            requireConstraintLabel.isHidden = false
+        }else{
+            requireConstraintLabel.isHidden = true
+        }
+    }
+   
 }
