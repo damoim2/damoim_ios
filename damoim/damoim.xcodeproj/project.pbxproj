@@ -28,6 +28,7 @@
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
 		F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */; };
 		F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */; };
+		F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */; };
 		F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
 		F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */; };
@@ -91,6 +92,7 @@
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
 		F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
 		F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
+		F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextVC.swift; sourceTree = "<group>"; };
 		F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButton.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
 		F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgDetailModalVC.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				F866B34329DAEB3C00F8B06D /* HomeMain */,
+				F84575B72A1C972000AEDAB7 /* WriteText */,
 				F8B20A8C29C842510021F9F4 /* TextDeatil */,
 				F83FD1DB29B4A68600215F8B /* SetGroup */,
 				F83FD1DA29B4A67100215F8B /* TextList */,
@@ -229,6 +232,14 @@
 				F88A430D29A3BBB6006D146B /* UserInfoView.swift */,
 			);
 			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		F84575B72A1C972000AEDAB7 /* WriteText */ = {
+			isa = PBXGroup;
+			children = (
+				F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */,
+			);
+			path = WriteText;
 			sourceTree = "<group>";
 		};
 		F862E9E429B1FD1900DA0515 /* NotUsed */ = {
@@ -484,6 +495,7 @@
 				F82EB2D729A38B4200E2256D /* FontSet.swift in Sources */,
 				F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */,
 				F889FC7E29A3BF7A00887727 /* MyaccountTVC.swift in Sources */,
+				F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */,
 				F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */,
 				F8AB469229BF0BE5003E405D /* TextListTVCType1.swift in Sources */,
 				F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */,
