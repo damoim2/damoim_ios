@@ -48,7 +48,6 @@ class HomeVC: UIViewController {
         textLabel.font = UIFont(name: CustomFont.SemiBold.rawValue, size: 13)
         return textLabel
     }()
-    
     private lazy var schduleDateStackView : UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -281,7 +280,40 @@ extension HomeVC {
             view.timeLabel.text = scSample[0].time
             scheduleListStackView.addArrangedSubview(view)
         }
-
+//MARK: - 함수
+extension HomeVC {
+    private func setAddSubView(){
+        
+        self.view.addSubview(self.containerView)
+        self.containerView.addSubview(scheduleView)
+        self.containerView.addSubview(groupListCV)
+        
+    }
+    private func setCV(){
+        self.groupListCV.delegate = self
+        self.groupListCV.dataSource = self
+    }
+    
+    private func setAutoLayout(){
+        containerView.snp.makeConstraints { make in
+            make.edges.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        scheduleView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+        }
+        groupListCV.snp.makeConstraints { make in
+            make.top.equalTo(scheduleView.snp.bottom)
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+    }
+    @objc private func didTapLogo(){
+        let setGroupVC = LoginVC()
+        setGroupVC.modalPresentationStyle = .fullScreen
+        self.present(setGroupVC, animated: true)
+    }
+}
     }
     @objc func scDateBtnAction(sender: UIButton){ //스케줄 일정 버튼 action
         for (buttonIndex, btn) in buttons.enumerated() {

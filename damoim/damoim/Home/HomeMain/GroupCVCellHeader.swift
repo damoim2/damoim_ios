@@ -15,7 +15,6 @@ class GroupCVCellHeader: UICollectionReusableView {
     var gridTwoAction :(() -> ())?
     private lazy var containerView : UIView = {
         let containerView = UIView()
-
         return containerView
     }()
     private lazy var groupLabel : UILabel = {
