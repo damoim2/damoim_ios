@@ -31,7 +31,7 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
         commentTableView.bounces = false
         commentTableView.separatorColor = .clear
         commentTableView.register(CommentTVC.self, forCellReuseIdentifier: CommentTVC.identi)
-        commentTableView.register(CommentTVH.self, forHeaderFooterViewReuseIdentifier: CommentTVH.identi)
+        commentTableView.register(TextDetailTVH.self, forHeaderFooterViewReuseIdentifier: TextDetailTVH.identi)
         return commentTableView
     }()
     private lazy var navigationTitle : UILabel = {
@@ -76,7 +76,7 @@ extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
         return sampleCommentData.count
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CommentTVH.identi) as? CommentTVH else {return UITableViewHeaderFooterView()}
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: TextDetailTVH.identi) as? TextDetailTVH else {return UITableViewHeaderFooterView()}
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         headerView.taptTestSetDelegate = self
         headerView.upperImgView.addGestureRecognizer(tapGestureRecognizer)

@@ -26,12 +26,12 @@
 		F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841125D299CE9FA0007C177 /* CalendarVC.swift */; };
 		F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411262299CEA3B0007C177 /* ChatVC.swift */; };
 		F8411266299CEA5D0007C177 /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8411265299CEA5C0007C177 /* MyProfileVC.swift */; };
+		F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */; };
+		F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */; };
 		F84DD6CC29FA693500F829A8 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6CB29FA693500F829A8 /* SignUpVC.swift */; };
 		F84DD6D029FA6D2800F829A8 /* SignInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6CF29FA6D2800F829A8 /* SignInputView.swift */; };
 		F84DD6D229FA703600F829A8 /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */; };
-		F84DD6CA29FA58A200F829A8 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */; };
 		F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */; };
-		F84575B92A1C973D00AEDAB7 /* WriteTextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */; };
 		F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
 		F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */; };
@@ -59,7 +59,7 @@
 		F8C126E429EEB876008D216A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126E329EEB876008D216A /* LoginVC.swift */; };
 		F8C126E629EEBD9B008D216A /* Extension UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126E529EEBD9B008D216A /* Extension UIColor.swift */; };
 		F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62329DACF49007ADC1B /* CommentTVC.swift */; };
-		F8D2A62629DACFA2007ADC1B /* CommentTVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */; };
+		F8D2A62629DACFA2007ADC1B /* TextDetailTVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */; };
 		F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -99,12 +99,12 @@
 		F841125D299CE9FA0007C177 /* CalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarVC.swift; sourceTree = "<group>"; };
 		F8411262299CEA3B0007C177 /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		F8411265299CEA5C0007C177 /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextVC.swift; sourceTree = "<group>"; };
+		F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
 		F84DD6CB29FA693500F829A8 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		F84DD6CF29FA6D2800F829A8 /* SignInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInputView.swift; sourceTree = "<group>"; };
 		F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTextField.swift; sourceTree = "<group>"; };
-		F84DD6C929FA58A200F829A8 /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
 		F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
-		F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTextVC.swift; sourceTree = "<group>"; };
 		F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButton.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
 		F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgDetailModalVC.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		F8C126E329EEB876008D216A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F8C126E529EEBD9B008D216A /* Extension UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIColor.swift"; sourceTree = "<group>"; };
 		F8D2A62329DACF49007ADC1B /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
-		F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVH.swift; sourceTree = "<group>"; };
+		F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetailTVH.swift; sourceTree = "<group>"; };
 		F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,6 +289,7 @@
 			children = (
 				F8D2A62229DACF27007ADC1B /* Comment */,
 				F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */,
+				F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */,
 				F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */,
 			);
 			path = TextDeatil;
@@ -367,7 +368,6 @@
 		F8D2A62229DACF27007ADC1B /* Comment */ = {
 			isa = PBXGroup;
 			children = (
-				F8D2A62529DACFA2007ADC1B /* CommentTVH.swift */,
 				F8D2A62329DACF49007ADC1B /* CommentTVC.swift */,
 			);
 			path = Comment;
@@ -520,7 +520,7 @@
 				F8AB469429BF0DA7003E405D /* ExtensionUIViewController.swift in Sources */,
 				F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */,
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
-				F8D2A62629DACFA2007ADC1B /* CommentTVH.swift in Sources */,
+				F8D2A62629DACFA2007ADC1B /* TextDetailTVH.swift in Sources */,
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F8ACABDC2A00F2B200B2AD27 /* TermsOfSurviceVC.swift in Sources */,
 				F8C126E629EEBD9B008D216A /* Extension UIColor.swift in Sources */,

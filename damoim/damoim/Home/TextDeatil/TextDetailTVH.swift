@@ -9,8 +9,8 @@ import UIKit
 protocol tapTestSettingAction : AnyObject{
     func tapTextSettingAction()
 }
-class CommentTVH: UITableViewHeaderFooterView {
-    static let identi = "CommentTVH"
+class TextDetailTVH: UITableViewHeaderFooterView {
+    static let identi = "TextDetailTVHid"
     weak var taptTestSetDelegate : tapTestSettingAction?
     private lazy var textDetailView : UIView = {
         let textDetailView = UIView()
@@ -187,7 +187,7 @@ class CommentTVH: UITableViewHeaderFooterView {
         super.init(coder: coder)
     }
 }
-extension CommentTVH {
+extension TextDetailTVH {
     private func addSubView(){
         addSubview(textDetailView)
         textDetailView.addSubview(writeInfoView)

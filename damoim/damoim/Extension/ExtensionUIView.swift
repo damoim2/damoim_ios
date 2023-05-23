@@ -17,7 +17,6 @@ extension UIView {
         changeLabel.attributedText = attributedString
         
     }
-}
     func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
@@ -26,6 +25,7 @@ extension UIView {
     func addSubViews(_ views : [UIView]){
         _ = views.map{self.addSubview($0)}
     }
+    
 }
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI

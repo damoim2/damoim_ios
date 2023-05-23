@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  damoim
-//
-//  Created by 원동진 on 2023/02/10.
-//
-//
 import UIKit
 import SnapKit
 struct ExampleCVItem{
@@ -30,6 +23,7 @@ class HomeVC: UIViewController {
     var moreBtnState : Bool = false // more 했을경우 True
     var selectedIndex : Int = 0
     //MARK: - 일정 관리 View
+ 
     private lazy var scheduleView  : UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(named: "grey06")
@@ -39,6 +33,9 @@ class HomeVC: UIViewController {
     private lazy var damoimLogo : UIImageView = {
         let logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "damoimLogo")
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapLogo))
+        logoImageView.addGestureRecognizer(tapGestureRecognizer)
+        logoImageView.isUserInteractionEnabled = true
         return logoImageView
     }()
     private lazy var scheduleLabel : UILabel = {
@@ -48,6 +45,7 @@ class HomeVC: UIViewController {
         textLabel.font = UIFont(name: CustomFont.SemiBold.rawValue, size: 13)
         return textLabel
     }()
+    
     private lazy var schduleDateStackView : UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -280,40 +278,7 @@ extension HomeVC {
             view.timeLabel.text = scSample[0].time
             scheduleListStackView.addArrangedSubview(view)
         }
-//MARK: - 함수
-extension HomeVC {
-    private func setAddSubView(){
-        
-        self.view.addSubview(self.containerView)
-        self.containerView.addSubview(scheduleView)
-        self.containerView.addSubview(groupListCV)
-        
-    }
-    private func setCV(){
-        self.groupListCV.delegate = self
-        self.groupListCV.dataSource = self
-    }
-    
-    private func setAutoLayout(){
-        containerView.snp.makeConstraints { make in
-            make.edges.equalTo(self.view.safeAreaLayoutGuide)
-        }
-        scheduleView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
-        }
-        groupListCV.snp.makeConstraints { make in
-            make.top.equalTo(scheduleView.snp.bottom)
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(16)
-            make.right.equalToSuperview().offset(-16)
-        }
-    }
-    @objc private func didTapLogo(){
-        let setGroupVC = LoginVC()
-        setGroupVC.modalPresentationStyle = .fullScreen
-        self.present(setGroupVC, animated: true)
-    }
-}
+
     }
     @objc func scDateBtnAction(sender: UIButton){ //스케줄 일정 버튼 action
         for (buttonIndex, btn) in buttons.enumerated() {
@@ -354,9 +319,11 @@ extension HomeVC {
             scheduleListStackView.addArrangedSubview(view)
             moreDownBtn.setImage(UIImage(named: "moreDownImg"), for: .normal)
         }
-        
-        
-            
+    }
+    @objc func tapLogo(){
+        print("tap")
+        let vc =  LoginVC() 
+        self.present(vc, animated: true)
     }
     
     
@@ -369,4 +336,3 @@ struct HomeVCPreview: PreviewProvider {
     }
 }
 #endif
-
