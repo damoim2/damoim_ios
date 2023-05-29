@@ -9,6 +9,7 @@ import UIKit
 
 class WriteTextVC: UIViewController {
     let placeHolder = "내용을 입력하세요."
+    let sample = (1...9).map{_ in return UIImage(named: "testImg5")}
     private let navigationView : UIView = {
         let navigationView = UIView()
         navigationView.backgroundColor = UIColor(named: "grey06")
@@ -71,9 +72,20 @@ class WriteTextVC: UIViewController {
         btn.setImage(UIImage(named: "keyBoardDownBtn"), for: .normal)
         return btn
     }()
+    private lazy var imgCollectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 100, height: 100)
+        let imgCV = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        imgCV.backgroundColor = UIColor(named: "grey06")
+        imgCV.register(WriteTextImgCVC.self, forCellWithReuseIdentifier: WriteTextImgCVC.identi)
+        return imgCV
+        
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(named: "grey06")
+        setImgCV()
         configure()
         setAutoLayout()
     }
@@ -81,12 +93,29 @@ class WriteTextVC: UIViewController {
         self.bottomOptionView.layer.addBorder([.top], color: UIColor(named: "grey04") ?? UIColor.gray, width: 1.0)
     }
 }
+extension WriteTextVC : UICollectionViewDataSource,UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cvcell = collectionView.dequeueReusableCell(withReuseIdentifier: WriteTextImgCVC.identi, for: indexPath) as? WriteTextImgCVC else { return UICollectionViewCell()}
+        print(indexPath.row)
+        cvcell.setImg(model: sample[indexPath.row] ?? UIImage())
+            
+        return cvcell
+    }
+}
 extension WriteTextVC {
+    private func setImgCV(){
+        imgCollectionView.delegate = self
+        imgCollectionView.dataSource = self
+    }
     @objc override func tapDismiss() {
         self.dismiss(animated: false)
     }
     private func configure(){
-        self.view.addSubViews([navigationView,inputTextView,bottomOptionView])
+        self.view.addSubViews([navigationView,imgCollectionView,inputTextView,bottomOptionView])
         navigationView.addSubViews([cancelBtn,titleLabel,completedBtn])
         bottomOptionView.addSubViews([addImgBtn,keyboardDownBtn])
     }
@@ -110,8 +139,14 @@ extension WriteTextVC {
             make.right.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-12)
         }
+        imgCollectionView.snp.makeConstraints { make in
+            make.top.equalTo(navigationView.snp.bottom).offset(6)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview()
+            make.height.equalTo(100)
+        }
         inputTextView.snp.makeConstraints { make in
-            make.top.equalTo(navigationView.snp.bottom).offset(16)
+            make.top.equalTo(imgCollectionView.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
         }
         bottomOptionView.snp.makeConstraints { make in
