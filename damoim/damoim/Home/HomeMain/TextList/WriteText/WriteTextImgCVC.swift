@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 class WriteTextImgCVC: UICollectionViewCell {
     static let identi = "WriteTextImgCVCid"
+    var cacnelButtonAction : (() -> Void) = {}
     private var upperView  : UIView = {
         let upperView = UIView()
         return upperView
@@ -19,10 +20,10 @@ class WriteTextImgCVC: UICollectionViewCell {
         imgView.layer.masksToBounds = true
         return imgView
     }()
-    private lazy var imgCancelBtn : UIButton = {
-        let cancelBtn = UIButton()
+    lazy var imgCancelBtn : CancelButton = {
+        let cancelBtn = CancelButton()
         cancelBtn.setImage(UIImage(named: "imgCancel"), for: .normal)
-
+        cancelBtn.addTarget(self, action: #selector(tapCancelImg), for: .touchUpInside)
         return cancelBtn
     }()
     override init(frame: CGRect) {
@@ -52,5 +53,11 @@ extension WriteTextImgCVC {
     }
     func setImg(model : UIImage){
         writeTextImgView.image = model
+    }
+    func setIndex(model : Int){
+        imgCancelBtn.index = model
+    }
+    @objc func tapCancelImg(){
+        cacnelButtonAction()
     }
 }

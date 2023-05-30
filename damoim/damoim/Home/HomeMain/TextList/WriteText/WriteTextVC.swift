@@ -5,11 +5,14 @@
 //  Created by 원동진 on 2023/05/23.
 //
 //startDev
+//정리한번 ㅎ하자..
 import UIKit
-
+import PhotosUI
 class WriteTextVC: UIViewController {
     let placeHolder = "내용을 입력하세요."
-    let sample = (1...9).map{_ in return UIImage(named: "testImg5")}
+    private var selections = [String : PHPickerResult]()
+    private var selectedAssetIdentifiers = [String]()
+    private var selectedImages : [UIImage] = []
     private let navigationView : UIView = {
         let navigationView = UIView()
         navigationView.backgroundColor = UIColor(named: "grey06")
@@ -65,11 +68,13 @@ class WriteTextVC: UIViewController {
         config.imagePlacement = .leading
         config.imagePadding = 4
         let btn = UIButton(configuration: config)
+        btn.addTarget(self, action: #selector(tapAddImg), for: .touchUpInside)
         return btn
     }()
     private lazy var keyboardDownBtn : UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "keyBoardDownBtn"), for: .normal)
+        btn.addTarget(self, action: #selector(tapKeyboadDown), for: .touchUpInside)
         return btn
     }()
     private lazy var imgCollectionView : UICollectionView = {
@@ -89,31 +94,41 @@ class WriteTextVC: UIViewController {
         configure()
         setAutoLayout()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyBoardListener()
+    }
     override func viewDidAppear(_ animated: Bool) {
         self.bottomOptionView.layer.addBorder([.top], color: UIColor(named: "grey04") ?? UIColor.gray, width: 1.0)
     }
 }
 extension WriteTextVC : UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return selectedImages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cvcell = collectionView.dequeueReusableCell(withReuseIdentifier: WriteTextImgCVC.identi, for: indexPath) as? WriteTextImgCVC else { return UICollectionViewCell()}
-        print(indexPath.row)
-        cvcell.setImg(model: sample[indexPath.row] ?? UIImage())
-            
+        cvcell.setImg(model: selectedImages[indexPath.row] )
+        cvcell.setIndex(model: indexPath.row)
+        cvcell.cacnelButtonAction = {
+            let index = cvcell.imgCancelBtn.index
+            self.selectedImages.remove(at: index)
+            let identifiers = self.selectedAssetIdentifiers.remove(at: index)
+            self.selections.removeValue(forKey: identifiers)
+            if self.selectedImages.count == 0{
+                self.imgCollectionView.snp.updateConstraints { make in
+                    make.height.equalTo(0)
+                }
+            }
+            DispatchQueue.main.async {
+                self.imgCollectionView.reloadData()
+            }
+        }
         return cvcell
     }
 }
 extension WriteTextVC {
-    private func setImgCV(){
-        imgCollectionView.delegate = self
-        imgCollectionView.dataSource = self
-    }
-    @objc override func tapDismiss() {
-        self.dismiss(animated: false)
-    }
     private func configure(){
         self.view.addSubViews([navigationView,imgCollectionView,inputTextView,bottomOptionView])
         navigationView.addSubViews([cancelBtn,titleLabel,completedBtn])
@@ -143,7 +158,7 @@ extension WriteTextVC {
             make.top.equalTo(navigationView.snp.bottom).offset(6)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview()
-            make.height.equalTo(100)
+            make.height.equalTo(0)
         }
         inputTextView.snp.makeConstraints { make in
             make.top.equalTo(imgCollectionView.snp.bottom).offset(10)
@@ -166,6 +181,64 @@ extension WriteTextVC {
         }
         
     }
+    private func setImgCV(){
+        imgCollectionView.delegate = self
+        imgCollectionView.dataSource = self
+    }
+//MARK: - 동작관련
+    @objc func keyboardWillShow(_ notification: Notification) {
+        print("keyBoard Show")
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        print("keyBoard Hide")
+    }
+    
+    func addKeyBoardListener(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+ 
+    @objc func tapKeyboadDown(){
+        
+    }
+    @objc func tapAddImg(){
+        var configuration = PHPickerConfiguration(photoLibrary: .shared())
+        configuration.selectionLimit = 10
+        configuration.filter = .images
+        configuration.selection = .ordered
+        configuration.preselectedAssetIdentifiers = selectedAssetIdentifiers
+        let picker = PHPickerViewController(configuration: configuration)
+        picker.delegate = self
+        self.present(picker, animated: true, completion: nil)
+    }
+    private func displayImage() {
+        let dispatchGroup = DispatchGroup()
+        // identifier와 이미지로 dictionary를 만듬 (selectedAssetIdentifiers의 순서에 따라 이미지를 받을 예정입니다.)
+        var imagesDict = [String: UIImage]()
+        for (identifier, result) in selections {
+            dispatchGroup.enter()
+            let itemProvider = result.itemProvider
+            // 만약 itemProvider에서 UIImage로 로드가 가능하다면?
+            if itemProvider.canLoadObject(ofClass: UIImage.self) {
+                // 로드 핸들러를 통해 UIImage를 처리해 줍시다. (비동기적으로 동작)
+                itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                    guard let image = image as? UIImage else { return }
+                    imagesDict[identifier] = image
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        dispatchGroup.notify(queue: DispatchQueue.main) { [weak self] in
+            guard let self = self else { return }
+            for identifier in self.selectedAssetIdentifiers {
+                guard let image = imagesDict[identifier] else { return }
+                selectedImages.append(image)
+            }
+            imgCollectionView.reloadData()
+        }
+    }
 }
 extension WriteTextVC : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -181,6 +254,29 @@ extension WriteTextVC : UITextViewDelegate{
         }
     }
 }
+extension WriteTextVC : PHPickerViewControllerDelegate{
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        picker.dismiss(animated: true)
+        selectedImages.removeAll()
+        var newSelections = [String: PHPickerResult]()
+        for result in results {
+            let identifier = result.assetIdentifier!
+            newSelections[identifier] = selections[identifier] ?? result
+        }
+        selections = newSelections
+        selectedAssetIdentifiers = results.compactMap{$0.assetIdentifier}
+        if selections.isEmpty {
+            selectedImages.removeAll()
+        }else {
+            imgCollectionView.snp.updateConstraints { make in
+                make.height.equalTo(100)
+            }
+            displayImage()
+        }
+    }
+    
+}
+
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
 struct WriteTextVCPreview: PreviewProvider {

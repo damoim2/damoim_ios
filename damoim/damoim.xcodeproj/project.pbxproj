@@ -32,6 +32,7 @@
 		F84DD6D029FA6D2800F829A8 /* SignInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6CF29FA6D2800F829A8 /* SignInputView.swift */; };
 		F84DD6D229FA703600F829A8 /* ExtensionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */; };
 		F850ED9E2A0A619600011209 /* ExtensionUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */; };
+		F85741F62A26271900844604 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85741F52A26271900844604 /* CancelButton.swift */; };
 		F862E9D829B1CA0200DA0515 /* ScheduleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */; };
 		F870077529B0CC8D00522B35 /* AddGroupCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */; };
 		F87E76BD29D6E73400FB3B2F /* ImgDetailModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */; };
@@ -106,6 +107,7 @@
 		F84DD6CF29FA6D2800F829A8 /* SignInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInputView.swift; sourceTree = "<group>"; };
 		F84DD6D129FA703600F829A8 /* ExtensionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTextField.swift; sourceTree = "<group>"; };
 		F850ED9D2A0A619600011209 /* ExtensionUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUIStackView.swift; sourceTree = "<group>"; };
+		F85741F52A26271900844604 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
 		F862E9D729B1CA0200DA0515 /* ScheduleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleButton.swift; sourceTree = "<group>"; };
 		F870077429B0CC8D00522B35 /* AddGroupCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupCVCell.swift; sourceTree = "<group>"; };
 		F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgDetailModalVC.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			children = (
 				F84575B82A1C973D00AEDAB7 /* WriteTextVC.swift */,
 				F88725742A2491EC0003D9E4 /* WriteTextImgCVC.swift */,
+				F85741F52A26271900844604 /* CancelButton.swift */,
 			);
 			path = WriteText;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 				F889FC8229A4D91300887727 /* GroupCVCell.swift in Sources */,
 				F8ACABDC2A00F2B200B2AD27 /* TermsOfSurviceVC.swift in Sources */,
 				F8C126E629EEBD9B008D216A /* Extension UIColor.swift in Sources */,
+				F85741F62A26271900844604 /* CancelButton.swift in Sources */,
 				F841125E299CE9FA0007C177 /* CalendarVC.swift in Sources */,
 				F88725752A2491EC0003D9E4 /* WriteTextImgCVC.swift in Sources */,
 				F8C126E429EEB876008D216A /* LoginVC.swift in Sources */,
