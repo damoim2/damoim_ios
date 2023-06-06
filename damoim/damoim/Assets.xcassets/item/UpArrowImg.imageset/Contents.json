@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "btn_purple_circle.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

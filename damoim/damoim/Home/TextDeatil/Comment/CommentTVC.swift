@@ -35,13 +35,16 @@ class CommentTVC : UITableViewCell {
         let userName = UILabel()
         userName.font = UIFont(name: CustomFont.Medium.rawValue, size: 13)
         userName.textColor = UIColor(named: "grey02")
-        
+        userName.numberOfLines = 1
+        userName.sizeToFit()
         return userName
     }()
     private lazy var writeDateLabel : UILabel = {
         let dateLabel = UILabel()
         dateLabel.font = UIFont(name: CustomFont.Regular.rawValue, size: 10)
         dateLabel.textColor = UIColor(named: "grey03")
+        dateLabel.numberOfLines = 1
+        dateLabel.sizeToFit()
         return dateLabel
     }()
     //MARK: - 글
@@ -50,6 +53,7 @@ class CommentTVC : UITableViewCell {
         let textLabel = UILabel()
         textLabel.font = UIFont(name: CustomFont.Regular.rawValue, size: 13)
         textLabel.textColor = UIColor(named: "grey01")
+        textLabel.sizeToFit()
         textLabel.numberOfLines = 0
         return textLabel
     }()
@@ -58,8 +62,8 @@ class CommentTVC : UITableViewCell {
         var config = UIButton.Configuration.plain()
         config.attributedTitle = AttributedString("답글달기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Regular.rawValue, size: 13)!]))
         config.baseForegroundColor = UIColor(named: "purple04")
-        config.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let addTextButton = UIButton(configuration: config)
+        addTextButton.sizeToFit()
         return addTextButton
     }()
 
