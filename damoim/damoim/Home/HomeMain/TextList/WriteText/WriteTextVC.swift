@@ -13,6 +13,7 @@ class WriteTextVC: UIViewController {
     private var selections = [String : PHPickerResult]()
     private var selectedAssetIdentifiers = [String]()
     private var selectedImages : [UIImage] = []
+    
     private let navigationView : UIView = {
         let navigationView = UIView()
         navigationView.backgroundColor = UIColor(named: "grey06")
@@ -52,14 +53,24 @@ class WriteTextVC: UIViewController {
         inputTextView.textContainerInset = .init(top: 0, left: 16, bottom: 16, right: 16)
         inputTextView.backgroundColor = UIColor(named: "grey06")
         inputTextView.delegate = self
+        inputTextView.inputAccessoryView = bottomOptionAccessoryView
         return inputTextView
     }()
-    private lazy var bottomOptionView : UIView = {
+    private lazy var imgCollectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 100, height: 100)
+        let imgCV = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        imgCV.backgroundColor = UIColor(named: "grey06")
+        imgCV.register(WriteTextImgCVC.self, forCellWithReuseIdentifier: WriteTextImgCVC.identi)
+        return imgCV
+    }()
+    private lazy var bottomOptionAccessoryView : UIView = {
         let view = UIView()
-        
         view.backgroundColor = UIColor(named: "grey06")
         return view
     }()
+    
     private lazy var addImgBtn : UIButton = {
         var config = UIButton.Configuration.plain()
         config.attributedTitle = AttributedString("사진", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Medium.rawValue, size: 13)!]))
@@ -71,21 +82,12 @@ class WriteTextVC: UIViewController {
         btn.addTarget(self, action: #selector(tapAddImg), for: .touchUpInside)
         return btn
     }()
+    
     private lazy var keyboardDownBtn : UIButton = {
         let btn = UIButton()
         btn.setImage(UIImage(named: "keyBoardDownBtn"), for: .normal)
         btn.addTarget(self, action: #selector(tapKeyboadDown), for: .touchUpInside)
         return btn
-    }()
-    private lazy var imgCollectionView : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 100, height: 100)
-        let imgCV = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        imgCV.backgroundColor = UIColor(named: "grey06")
-        imgCV.register(WriteTextImgCVC.self, forCellWithReuseIdentifier: WriteTextImgCVC.identi)
-        return imgCV
-        
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,13 +95,15 @@ class WriteTextVC: UIViewController {
         setImgCV()
         configure()
         setAutoLayout()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         addKeyBoardListener()
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.bottomOptionView.layer.addBorder([.top], color: UIColor(named: "grey04") ?? UIColor.gray, width: 1.0)
+        super.viewDidAppear(animated)
+        bottomOptionAccessoryView.layer.addBorder([.top], color: UIColor(named: "grey04") ?? UIColor.gray, width: 1)
     }
 }
 extension WriteTextVC : UICollectionViewDataSource,UICollectionViewDelegate{
@@ -130,9 +134,11 @@ extension WriteTextVC : UICollectionViewDataSource,UICollectionViewDelegate{
 }
 extension WriteTextVC {
     private func configure(){
-        self.view.addSubViews([navigationView,imgCollectionView,inputTextView,bottomOptionView])
+        self.view.addSubViews([navigationView,imgCollectionView,inputTextView,bottomOptionAccessoryView])
         navigationView.addSubViews([cancelBtn,titleLabel,completedBtn])
-        bottomOptionView.addSubViews([addImgBtn,keyboardDownBtn])
+        bottomOptionAccessoryView.addSubViews([addImgBtn,keyboardDownBtn])
+        keyboardDownBtn.isHidden = true
+        
     }
     private func setAutoLayout(){
         navigationView.snp.makeConstraints { make in
@@ -164,7 +170,7 @@ extension WriteTextVC {
             make.top.equalTo(imgCollectionView.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
         }
-        bottomOptionView.snp.makeConstraints { make in
+        bottomOptionAccessoryView.snp.makeConstraints { make in
             make.top.equalTo(inputTextView.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
@@ -187,10 +193,13 @@ extension WriteTextVC {
     }
 //MARK: - 동작관련
     @objc func keyboardWillShow(_ notification: Notification) {
+        keyboardDownBtn.isHidden = false
         print("keyBoard Show")
+        
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
+        keyboardDownBtn.isHidden = true
         print("keyBoard Hide")
     }
     
@@ -201,7 +210,7 @@ extension WriteTextVC {
     }
  
     @objc func tapKeyboadDown(){
-        
+        inputTextView.resignFirstResponder()
     }
     @objc func tapAddImg(){
         var configuration = PHPickerConfiguration(photoLibrary: .shared())
@@ -252,6 +261,10 @@ extension WriteTextVC : UITextViewDelegate{
             textView.text = placeHolder
             textView.textColor = UIColor(named: "grey03")
         }
+    }
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
     }
 }
 extension WriteTextVC : PHPickerViewControllerDelegate{

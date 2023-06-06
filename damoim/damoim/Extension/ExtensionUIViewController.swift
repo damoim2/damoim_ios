@@ -22,6 +22,7 @@ extension UIViewController {
 //                statusBarView?.backgroundColor = bgColor
 //            }
 //        }
+    
 }
 enum DeviceType {
     case iPhoneSE2
