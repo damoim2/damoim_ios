@@ -60,6 +60,7 @@
 		F8C126E629EEBD9B008D216A /* Extension UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C126E529EEBD9B008D216A /* Extension UIColor.swift */; };
 		F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62329DACF49007ADC1B /* CommentTVC.swift */; };
 		F8D2A62629DACFA2007ADC1B /* TextDetailTVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */; };
+		F8E977A32A30714D00D769C3 /* UserStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E977A22A30714D00D769C3 /* UserStackView.swift */; };
 		F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +138,7 @@
 		F8C126E529EEBD9B008D216A /* Extension UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UIColor.swift"; sourceTree = "<group>"; };
 		F8D2A62329DACF49007ADC1B /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetailTVH.swift; sourceTree = "<group>"; };
+		F8E977A22A30714D00D769C3 /* UserStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStackView.swift; sourceTree = "<group>"; };
 		F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,6 +289,7 @@
 		F8B20A8C29C842510021F9F4 /* TextDeatil */ = {
 			isa = PBXGroup;
 			children = (
+				F8E977A12A30711D00D769C3 /* Components */,
 				F8D2A62229DACF27007ADC1B /* Comment */,
 				F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */,
 				F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */,
@@ -371,6 +374,14 @@
 				F8D2A62329DACF49007ADC1B /* CommentTVC.swift */,
 			);
 			path = Comment;
+			sourceTree = "<group>";
+		};
+		F8E977A12A30711D00D769C3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F8E977A22A30714D00D769C3 /* UserStackView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +553,7 @@
 				F83C560729C2132100535CBE /* TextListTVCType2.swift in Sources */,
 				F82EB2C729A377E900E2256D /* MyProfileTVC.swift in Sources */,
 				F83FD1E329B4BB8900215F8B /* SetGroupTVC.swift in Sources */,
+				F8E977A32A30714D00D769C3 /* UserStackView.swift in Sources */,
 				F8ACABE62A0117D200B2AD27 /* NextBtn.swift in Sources */,
 				F889FC8029A4D87F00887727 /* GridCollectionVFL.swift in Sources */,
 				F8C05A362995431A001719A9 /* AppDelegate.swift in Sources */,

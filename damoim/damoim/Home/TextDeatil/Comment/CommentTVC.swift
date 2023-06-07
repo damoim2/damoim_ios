@@ -28,7 +28,7 @@ class CommentTVC : UITableViewCell {
         return stackView
     }()
     private lazy var userImageView : UIImageView = {
-        let userImage = UIImageView()
+        let userImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         return userImage
     }()
     private lazy var userNameLabel : UILabel = {
@@ -62,8 +62,11 @@ class CommentTVC : UITableViewCell {
         var config = UIButton.Configuration.plain()
         config.attributedTitle = AttributedString("답글달기", attributes: AttributeContainer([NSAttributedString.Key.font : UIFont(name: CustomFont.Regular.rawValue, size: 13)!]))
         config.baseForegroundColor = UIColor(named: "purple04")
+        config.titleAlignment = .leading
+        config.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let addTextButton = UIButton(configuration: config)
         addTextButton.sizeToFit()
+        
         return addTextButton
     }()
 
@@ -98,6 +101,9 @@ extension CommentTVC  {
         containerView.addSubview(userTextLabel)
         containerView.addSubview(addCommentButton)
         
+        userImageView.layer.cornerRadius = userImageView.frame.height / 2
+        userImageView.layer.masksToBounds = true
+        
     }
     private func setAutoLayou(){
         containerView.snp.makeConstraints { make in
@@ -126,6 +132,7 @@ extension CommentTVC  {
         addCommentButton.snp.makeConstraints { make in
             make.top.equalTo(userTextLabel.snp.bottom).offset(6)
             make.left.equalToSuperview().offset(46)
+            make.height.equalTo(20)
             make.bottom.equalTo(containerView.snp.bottom).offset(-6)
         }
     }

@@ -18,6 +18,7 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
     
     var sampleCommentData = [CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김초코", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김코난", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "갱갱", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?")
     ]
+   
     
     private lazy var containerView : UIView = {
         let view = UIView()
@@ -66,7 +67,11 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
     }()
     private lazy var bottomView : UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "grey06")
+//        view.backgroundColor = UIColor(named: "grey06")
+//        view.backgroundColor = UIColor.red
+        view.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+        view.layer.borderColor = UIColor(named: "purple04")?.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     private lazy var upArrowBtn: UIButton = {
@@ -74,14 +79,41 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
         upArrowBtn.setImage(UIImage(named: "UpArrowImg"), for: .normal)
         return upArrowBtn
     }()
-    
+    private lazy var mentionStackView : UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 5
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.backgroundColor = UIColor(named: "grey06")
+        
+        return stackView
+    }()
+//    private lazy var test1 : UserStackView = {
+//       let test1 = UserStackView()
+//        test1.setDataFormat(img: sampleCommentData[0].userImg, name: sampleCommentData[0].userName)
+//        return test1
+//    }()
+//    private lazy var test2 : UserStackView = {
+//       let test1 = UserStackView()
+//        test1.setDataFormat(img: sampleCommentData[1].userImg, name: sampleCommentData[1].userName)
+//        return test1
+//    }()
+//    private lazy var test3 : UserStackView = {
+//       let test1 = UserStackView()
+//        test1.setDataFormat(img: sampleCommentData[2].userImg, name: sampleCommentData[2].userName)
+//        return test1
+//    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+   
         addSubView()
         setAutoLayout()
         setTableView()
         setUpNotification()
+        
         accessoryView.backgroundColor = UIColor(named: "grey06")
+        
         self.hideKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +123,7 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        addTopLayer()
+       
     }
     
 }
@@ -105,7 +137,7 @@ extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
         headerView.taptTestSetDelegate = self
         headerView.upperImgView.addGestureRecognizer(tapGestureRecognizer)
         headerView.upperImgView.snp.makeConstraints { make in
-            make.height.equalTo(self.view.frame.height*0.28)
+//            make.height.equalTo(self.view.frame.height*0.28)
         }
         return headerView
     }
@@ -130,6 +162,7 @@ extension TextDetailVC  {
         self.view.addSubview(containerView)
         containerView.addSubview(commentTableView)
         containerView.addSubview(bottomView)
+        bottomView.addSubview(mentionStackView)
         bottomView.addSubview(commentTextView)
         accessoryView.addSubview(upArrowBtn)
     }
@@ -145,8 +178,13 @@ extension TextDetailVC  {
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
-        commentTextView.snp.makeConstraints { make in
+        mentionStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+        commentTextView.snp.makeConstraints { make in
+            make.top.equalTo(mentionStackView.snp.bottom).offset(8)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
             make.height.equalTo(40)
@@ -204,12 +242,16 @@ extension TextDetailVC  {
         }
         keyboardFrame = view.convert(keyboardFrame, from: nil)
         keyBoardHeight = keyboardFrame.size.height
+        
         self.view.frame.size.height -= keyBoardHeight
         //        bottomView.frame.origin.y -= (keyBoardHeight-self.view.safeAreaInsets.bottom)
     }
     @objc private func keyboardWillHide(_ notification: Notification) {
-        print("keyboardDown")
         
+        print("keyboardDown")
+        mentionStackView.arrangedSubviews.forEach { view in
+            view.removeFromSuperview()
+        }
         bottomView.layer.cornerRadius = 0
         guard let userInfo = notification.userInfo as NSDictionary?,
               var keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
@@ -220,12 +262,7 @@ extension TextDetailVC  {
         //        bottomView.frame.origin.y += (keyboardFrame.size.height-self.view.safeAreaInsets.bottom)
         
     }
-    private func addTopLayer(){
-        let topBorder = CALayer()
-        topBorder.frame = CGRect(x: 0, y: 0, width: self.bottomView.frame.size.width, height: 1.0)
-        topBorder.backgroundColor = UIColor(named: "purple04")?.cgColor
-        bottomView.layer.addSublayer(topBorder)
-    }
+    
 }
 extension TextDetailVC : tapTestSettingAction {
     func tapTextSettingAction() {
@@ -242,6 +279,7 @@ extension TextDetailVC : tapTestSettingAction {
 extension TextDetailVC : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("DidBegin")
+        
         if textView.text == textViewPlaceHoler {
             textView.text = nil
             textView.textColor = UIColor(named: "grey01")
@@ -256,7 +294,15 @@ extension TextDetailVC : UITextViewDelegate{
     }
     func textViewDidChange(_ textView: UITextView) {
         print("DidChange")
-        
+        if textView.text == "@" {
+            for i in 0..<sampleCommentData.count{
+                
+                let view = UserStackView()
+                view.setDataFormat(img: sampleCommentData[i].userImg, name: sampleCommentData[i].userName)
+                
+                mentionStackView.addArrangedSubview(view)
+            }
+        }
         let size = CGSize(width: view.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         if commentMaxHeight > Int(estimatedSize.height) {
