@@ -61,6 +61,7 @@
 		F8D2A62429DACF49007ADC1B /* CommentTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62329DACF49007ADC1B /* CommentTVC.swift */; };
 		F8D2A62629DACFA2007ADC1B /* TextDetailTVH.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */; };
 		F8E977A32A30714D00D769C3 /* UserStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E977A22A30714D00D769C3 /* UserStackView.swift */; };
+		F8E977A52A3091ED00D769C3 /* MentionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E977A42A3091ED00D769C3 /* MentionTableViewCell.swift */; };
 		F8F87BEC29AB5D3400798297 /* GroupCVCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		F8D2A62329DACF49007ADC1B /* CommentTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTVC.swift; sourceTree = "<group>"; };
 		F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDetailTVH.swift; sourceTree = "<group>"; };
 		F8E977A22A30714D00D769C3 /* UserStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStackView.swift; sourceTree = "<group>"; };
+		F8E977A42A3091ED00D769C3 /* MentionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionTableViewCell.swift; sourceTree = "<group>"; };
 		F8F87BEB29AB5D3400798297 /* GroupCVCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCVCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -292,6 +294,7 @@
 				F8E977A12A30711D00D769C3 /* Components */,
 				F8D2A62229DACF27007ADC1B /* Comment */,
 				F8B20A8D29C842680021F9F4 /* TextDetailVC.swift */,
+				F8E977A42A3091ED00D769C3 /* MentionTableViewCell.swift */,
 				F8D2A62529DACFA2007ADC1B /* TextDetailTVH.swift */,
 				F87E76BC29D6E73400FB3B2F /* ImgDetailModalVC.swift */,
 			);
@@ -529,6 +532,7 @@
 				F83C560929C21A4700535CBE /* ExtensionUILabel.swift in Sources */,
 				F8411263299CEA3B0007C177 /* ChatVC.swift in Sources */,
 				F8AB469429BF0DA7003E405D /* ExtensionUIViewController.swift in Sources */,
+				F8E977A52A3091ED00D769C3 /* MentionTableViewCell.swift in Sources */,
 				F83FD1DD29B4A6AF00215F8B /* GroupTextListVC.swift in Sources */,
 				F82EB2CC29A3853D00E2256D /* ExtensionUIImage.swift in Sources */,
 				F8D2A62629DACFA2007ADC1B /* TextDetailTVH.swift in Sources */,
