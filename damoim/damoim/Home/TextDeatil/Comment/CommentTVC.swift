@@ -7,9 +7,12 @@
 
 import UIKit
 import SnapKit
-
+protocol tapAddCommetActionDelegate{
+    func tapAddCommentAction(username : String)
+}
 class CommentTVC : UITableViewCell {
     static let identi = "CommentTVCid"
+    var tapAddCommentDelegate : tapAddCommetActionDelegate?
     private lazy var containerView : UIView = {
         let view = UIView()
         return view
@@ -65,6 +68,7 @@ class CommentTVC : UITableViewCell {
         config.titleAlignment = .leading
         config.contentInsets = NSDirectionalEdgeInsets.init(top: 0, leading: 0, bottom: 0, trailing: 0)
         let addTextButton = UIButton(configuration: config)
+        addTextButton.addTarget(self, action: #selector(tapCommentAdd), for: .touchUpInside)
         addTextButton.sizeToFit()
         
         return addTextButton
@@ -141,5 +145,8 @@ extension CommentTVC  {
         userNameLabel.text = model.userName
         writeDateLabel.text = model.date
         userTextLabel.text = model.comment
+    }
+    @objc func tapCommentAdd(){
+        self.tapAddCommentDelegate?.tapAddCommentAction(username: userNameLabel.text ?? "홍길동")
     }
 }

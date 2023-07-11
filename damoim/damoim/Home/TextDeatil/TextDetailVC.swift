@@ -18,20 +18,19 @@ struct MentionDataFormat {
     let userName : String
 }
 class TextDetailVC: UIViewController, ConstraintRelatableTarget {
+    var commentUserName : String = ""
     var keyBoardHeight : CGFloat = 0.0
-    
     var sampleCommentData = [CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김초코", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김코난", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "갱갱", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가? 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가? 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가? 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?")
     ]
+    var sampleUserNameArr : [String] = []
     var SampleMentionData : [MentionDataFormat] = []
-//    var SampleMentionData =  [MentionDataFormat(userImg: UIImage(named: "")!, userName: "김초코"),MentionDataFormat(userImg: UIImage(named: "testImg")!, userName: "김코난" ),MentionDataFormat(userImg: UIImage(named: "testImg")!, userName: "갱갱")]
-    
     private lazy var containerView : UIView = {
         let view = UIView()
         return view
     }()
-    // Commet 관련
+    //MARK: - Commet 관련
     var commentMaxHeight = 0
-    let textViewPlaceHoler = "@김초코 댓글을 입력해주세요."// 댓글 textView placeHolder
+    let textViewPlaceHoler = "댓글을 입력해주세요."// 댓글 textView placeHolder
     
     var groupName : String = "모임 이름"
     private lazy var commentTableView : UITableView = {
@@ -66,6 +65,7 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
         textView.isScrollEnabled = false
         textView.font = UIFont(name: CustomFont.Regular.rawValue, size: 13)
         textView.textColor = UIColor(named: "grey03")
+        textView.text = textViewPlaceHoler
         //        let attributesString = NSMutableAttributedString(string: textViewPlaceHoler)
         //        attributesString.addAttribute(.foregroundColor, value: UIColor(named: "purple01") as Any, range: (textViewPlaceHoler as NSString).range(of: "@김초코"))
         //        attributesString.addAttribute(.backgroundColor, value: UIColor(named: "purple04") as Any, range: (textViewPlaceHoler as NSString).range(of: "@김초코"))
@@ -96,53 +96,25 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
         upArrowBtn.setImage(UIImage(named: "UpArrowImg"), for: .normal)
         return upArrowBtn
     }()
-    //    private lazy var mentionStackView : UIStackView = {
-    //        let stackView = UIStackView()
-    //        stackView.axis = .vertical
-    //        stackView.spacing = 5
-    //        stackView.distribution = .fillEqually
-    //        stackView.alignment = .fill
-    //        stackView.backgroundColor = UIColor(named: "grey06")
-    //
-    //        return stackView
-    //    }()
-    //    private lazy var test1 : UserStackView = {
-    //       let test1 = UserStackView()
-    //        test1.setDataFormat(img: sampleCommentData[0].userImg, name: sampleCommentData[0].userName)
-    //        return test1
-    //    }()
-    //    private lazy var test2 : UserStackView = {
-    //       let test1 = UserStackView()
-    //        test1.setDataFormat(img: sampleCommentData[1].userImg, name: sampleCommentData[1].userName)
-    //        return test1
-    //    }()
-    //    private lazy var test3 : UserStackView = {
-    //       let test1 = UserStackView()
-    //        test1.setDataFormat(img: sampleCommentData[2].userImg, name: sampleCommentData[2].userName)
-    //        return test1
-    //    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for i in sampleCommentData{
+            sampleUserNameArr.append( i.userName)
+        }
         addSubView()
         setAutoLayout()
         setTableView()
         setUpNotification()
-        
         accessoryView.backgroundColor = UIColor(named: "grey06")
-        
         self.hideKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavigtionBar()
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
-    
 }
 extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -170,6 +142,7 @@ extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
         if tableView == self.commentTableView{
             guard let commentTVC = tableView.dequeueReusableCell(withIdentifier: CommentTVC.identi, for: indexPath) as? CommentTVC else {return UITableViewCell()}
             commentTVC.setComment(model: sampleCommentData[indexPath.row])
+            commentTVC.tapAddCommentDelegate = self
             cell = commentTVC
         }
         if tableView == self.mentionTableView{
@@ -180,28 +153,17 @@ extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
         }
         return cell!
     }
-    
-    
-    //    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-    //        return UITableView
-    //    }
-    //삭제
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            
         }
     }
 }
 extension TextDetailVC  {
-    
     private func addSubView(){
         self.view.addSubview(containerView)
         containerView.addSubview(commentTableView)
         containerView.addSubview(bottomView)
         bottomView.addSubview(mentionTableView)
-        //        bottomView.addSubview(mentionStackView)
-        
         bottomView.addSubview(commentTextView)
         accessoryView.addSubview(upArrowBtn)
     }
@@ -217,11 +179,6 @@ extension TextDetailVC  {
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
-        //        mentionStackView.snp.makeConstraints { make in
-        //            make.top.equalToSuperview().offset(8)
-        //            make.left.equalToSuperview().offset(16)
-        //            make.right.equalToSuperview().offset(-16)
-        //        }
         mentionTableView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.left.equalToSuperview().offset(16)
@@ -326,10 +283,9 @@ extension TextDetailVC : tapTestSettingAction {
 extension TextDetailVC : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
         print("DidBegin")
-        
         if textView.text == textViewPlaceHoler {
             textView.text = nil
-            textView.textColor = UIColor(named: "grey01")
+            textView.textColor = UIColor(named: "grey02")
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -341,21 +297,29 @@ extension TextDetailVC : UITextViewDelegate{
     }
     func textViewDidChange(_ textView: UITextView) {
         print("DidChange")
+        
         if textView.text == "@" {
+            
             for i in 0..<sampleCommentData.count{
                 SampleMentionData.append(MentionDataFormat(userImg: sampleCommentData[i].userImg, userName: sampleCommentData[i].userName))
             }
-            
             mentionTableView.snp.updateConstraints { make in
                 make.height.equalTo(SampleMentionData.count * 32)
             }
             DispatchQueue.main.async {
-                
                 self.mentionTableView.reloadData()
             }
             
+        }else{
             
+            mentionTableView.snp.updateConstraints { make in
+                make.height.equalTo(1)
+            }
+            DispatchQueue.main.async {
+                self.mentionTableView.reloadData()
+            }
         }
+        
         let size = CGSize(width: view.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         if commentMaxHeight > Int(estimatedSize.height) {
@@ -366,6 +330,14 @@ extension TextDetailVC : UITextViewDelegate{
             textView.isScrollEnabled = true
         }
     }
+}
+extension TextDetailVC : tapAddCommetActionDelegate{
+    func tapAddCommentAction(username: String) {
+        commentTextView.becomeFirstResponder()
+        commentTextView.text = "@\(username) "
+    }
+    
+    
 }
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
