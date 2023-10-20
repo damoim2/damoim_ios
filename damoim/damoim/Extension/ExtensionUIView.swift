@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 extension UIView {
+    
     func setChangeFont(changeLabel: UILabel,fontName : String,fontSize:CGFloat,targetStriong : String){
         let fullText = changeLabel.text ?? ""
         let attFont = UIFont(name: fontName, size: fontSize)
