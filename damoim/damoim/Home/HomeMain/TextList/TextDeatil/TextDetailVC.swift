@@ -13,26 +13,45 @@ struct CommentDataStruct {
     let date : String
     let comment : String
 }
+struct MentionDataFormat {
+    let userImg : UIImage
+    let userName : String
+}
 class TextDetailVC: UIViewController, ConstraintRelatableTarget {
-    var sampleCommentData = [CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김초코", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김코난", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "갱갱", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?")
+    var commentUserName : String = ""
+    var keyBoardHeight : CGFloat = 0.0
+    var sampleCommentData = [CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김초코", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "김코난", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?"),CommentDataStruct(userImg: UIImage(named: "testImg")!, userName: "갱갱", date: "00월 00일", comment: "능히 영락과 우리의 것이다. 뛰노는 그들에게 고동을 따뜻한 목숨이 있다. 장식하는 청춘의 끓는 고동을 물방아 동산에는 생명을 있는가? 인간이 얼마나 목숨을 약동하다. 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가? 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가? 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가? 동력은 것은 피고, 주는 살 있다. 길을 들어 곧 그리하였는가?")
     ]
-
+    var sampleUserNameArr : [String] = []
+    var SampleMentionData : [MentionDataFormat] = []
     private lazy var containerView : UIView = {
         let view = UIView()
         return view
     }()
-    // Commet 관련
+    //MARK: - Commet 관련
     var commentMaxHeight = 0
-    let textViewPlaceHoler = "@김초코 댓글을 입력해주세요."// 댓글 textView placeHolder
+    let textViewPlaceHoler = "댓글을 입력해주세요."// 댓글 textView placeHolder
     
     var groupName : String = "모임 이름"
     private lazy var commentTableView : UITableView = {
         let commentTableView = UITableView(frame: .zero, style: .grouped)
         commentTableView.bounces = false
         commentTableView.separatorColor = .clear
+        commentTableView.rowHeight = UITableView.automaticDimension
+        commentTableView.estimatedRowHeight = 150
         commentTableView.register(CommentTVC.self, forCellReuseIdentifier: CommentTVC.identi)
         commentTableView.register(TextDetailTVH.self, forHeaderFooterViewReuseIdentifier: TextDetailTVH.identi)
         return commentTableView
+    }()
+    private lazy var mentionTableView : UITableView = {
+        let mentionTableView = UITableView(frame: .zero, style: .grouped)
+        mentionTableView.bounces = false
+        mentionTableView.separatorColor = .clear
+        mentionTableView.rowHeight = UITableView.automaticDimension
+        mentionTableView.estimatedRowHeight = 32
+        mentionTableView.register(MentionTableViewCell.self, forCellReuseIdentifier: MentionTableViewCell.identi)
+        mentionTableView.backgroundColor = UIColor(named: "grey06")
+        return mentionTableView
     }()
     private lazy var navigationTitle : UILabel = {
         let titleLabel = UILabel()
@@ -46,34 +65,67 @@ class TextDetailVC: UIViewController, ConstraintRelatableTarget {
         textView.isScrollEnabled = false
         textView.font = UIFont(name: CustomFont.Regular.rawValue, size: 13)
         textView.textColor = UIColor(named: "grey03")
-        let attributesString = NSMutableAttributedString(string: textViewPlaceHoler)
-        attributesString.addAttribute(.foregroundColor, value: UIColor(named: "purple01") as Any, range: (textViewPlaceHoler as NSString).range(of: "@김초코"))
-        attributesString.addAttribute(.backgroundColor, value: UIColor(named: "purple04") as Any, range: (textViewPlaceHoler as NSString).range(of: "@김초코"))
-        textView.attributedText = attributesString
+        textView.text = textViewPlaceHoler
+        //        let attributesString = NSMutableAttributedString(string: textViewPlaceHoler)
+        //        attributesString.addAttribute(.foregroundColor, value: UIColor(named: "purple01") as Any, range: (textViewPlaceHoler as NSString).range(of: "@김초코"))
+        //        attributesString.addAttribute(.backgroundColor, value: UIColor(named: "purple04") as Any, range: (textViewPlaceHoler as NSString).range(of: "@김초코"))
+        //        textView.attributedText = attributesString
         textView.textContainerInset = .init(top: 10, left: 10, bottom: 10, right: 10)
         textView.backgroundColor = UIColor(named: "grey05")
         textView.layer.cornerRadius = 16
         textView.layer.masksToBounds = true
         textView.sizeToFit()
         textView.delegate = self
+        textView.inputAccessoryView = accessoryView
         return textView
     }()
-    
+    lazy var accessoryView: UIView = {
+        return UIView(frame: CGRect(x: 0.0, y: 0.0, width: UIScreen.main.bounds.width, height: 40.0))
+    }()
+    private lazy var bottomView : UIView = {
+        let view = UIView()
+        //        view.backgroundColor = UIColor(named: "grey06")
+        //        view.backgroundColor = UIColor.red
+        view.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+        view.layer.borderColor = UIColor(named: "purple04")?.cgColor
+        view.layer.borderWidth = 1
+        return view
+    }()
+    private lazy var upArrowBtn: UIButton = {
+        let upArrowBtn = UIButton()
+        upArrowBtn.setImage(UIImage(named: "UpArrowImg"), for: .normal)
+        return upArrowBtn
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        for i in sampleCommentData{
+            sampleUserNameArr.append( i.userName)
+        }
         addSubView()
         setAutoLayout()
         setTableView()
+        setUpNotification()
+        accessoryView.backgroundColor = UIColor(named: "grey06")
+        self.hideKeyboardWhenTappedAround()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setNavigtionBar()
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
 }
 extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sampleCommentData.count
+        var count : Int?
+        if tableView == self.commentTableView{
+            count = sampleCommentData.count
+        }
+        if tableView == self.mentionTableView{
+            count =  SampleMentionData.count
+        }
+        return count!
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: TextDetailTVH.identi) as? TextDetailTVH else {return UITableViewHeaderFooterView()}
@@ -81,22 +133,28 @@ extension TextDetailVC : UITableViewDelegate,UITableViewDataSource{
         headerView.taptTestSetDelegate = self
         headerView.upperImgView.addGestureRecognizer(tapGestureRecognizer)
         headerView.upperImgView.snp.makeConstraints { make in
-            make.height.equalTo(self.view.frame.height*0.28)
+            //            make.height.equalTo(self.view.frame.height*0.28)
         }
         return headerView
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let commentTVC = tableView.dequeueReusableCell(withIdentifier: CommentTVC.identi, for: indexPath) as? CommentTVC else {return UITableViewCell()}
-        commentTVC.setComment(model: sampleCommentData[indexPath.row])
-        return commentTVC
+        var cell : UITableViewCell?
+        if tableView == self.commentTableView{
+            guard let commentTVC = tableView.dequeueReusableCell(withIdentifier: CommentTVC.identi, for: indexPath) as? CommentTVC else {return UITableViewCell()}
+            commentTVC.setComment(model: sampleCommentData[indexPath.row])
+            commentTVC.tapAddCommentDelegate = self
+            cell = commentTVC
+        }
+        if tableView == self.mentionTableView{
+            guard let mentionTVC = tableView.dequeueReusableCell(withIdentifier: MentionTableViewCell.identi, for: indexPath) as? MentionTableViewCell else {return UITableViewCell()}
+            mentionTVC.setData(model: SampleMentionData[indexPath.row])
+            cell = mentionTVC
+            
+        }
+        return cell!
     }
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView
-//    }
-    //삭제
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            
         }
     }
 }
@@ -104,8 +162,10 @@ extension TextDetailVC  {
     private func addSubView(){
         self.view.addSubview(containerView)
         containerView.addSubview(commentTableView)
-        containerView.addSubview(commentTextView)
-
+        containerView.addSubview(bottomView)
+        bottomView.addSubview(mentionTableView)
+        bottomView.addSubview(commentTextView)
+        accessoryView.addSubview(upArrowBtn)
     }
     private func setAutoLayout(){
         containerView.snp.makeConstraints { make in
@@ -114,15 +174,33 @@ extension TextDetailVC  {
         commentTableView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
         }
-        commentTextView.snp.makeConstraints { make in
+        bottomView.snp.makeConstraints { make in
             make.top.equalTo(commentTableView.snp.bottom).offset(8)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        mentionTableView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        commentTextView.snp.makeConstraints { make in
+            make.top.equalTo(mentionTableView.snp.bottom).offset(8)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
             make.height.equalTo(40)
+            make.bottom.equalToSuperview().offset(-8)
         }
         commentMaxHeight = Int(commentTextView.bounds.height) * 3
+        guard let upArrowBtnSuperView = upArrowBtn.superview else {return}
+        upArrowBtn.snp.makeConstraints { make in
+            make.top.equalTo(upArrowBtnSuperView.snp.top).offset(8)
+            make.right.equalTo(upArrowBtnSuperView.snp.right).offset(-16)
+            make.bottom.equalTo(upArrowBtnSuperView.snp.bottom).offset(-8)
+        }
     }
+    
     private func setNavigtionBar(){
         self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.backgroundColor = UIColor(named: "purple01")
@@ -134,12 +212,61 @@ extension TextDetailVC  {
     private func setTableView(){
         commentTableView.delegate = self
         commentTableView.dataSource = self
+        mentionTableView.delegate = self
+        mentionTableView.dataSource = self
     }
     @objc private func didTapView(){
         let imgDetailModalVC = ImgDetailModalVC()
         imgDetailModalVC.modalPresentationStyle = .fullScreen
         self.present(imgDetailModalVC, animated: true)
     }
+    private func setUpNotification() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        print("keyboardUp")
+        
+        //        bottomView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+        //        bottomView.layer.addBorder([.top,.left,.right], color: UIColor(named: "purple04") ?? UIColor.purple, width: 1.0)
+        //        bottomView.layer.borderWidth = 1
+        guard let userInfo = notification.userInfo as NSDictionary?,
+              var keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        keyboardFrame = view.convert(keyboardFrame, from: nil)
+        keyBoardHeight = keyboardFrame.size.height
+        
+        self.view.frame.size.height -= keyBoardHeight
+        //        bottomView.frame.origin.y -= (keyBoardHeight-self.view.safeAreaInsets.bottom)
+    }
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        
+        print("keyboardDown")
+        //        mentionStackView.arrangedSubviews.forEach { view in
+        //            view.removeFromSuperview()
+        //        }
+        bottomView.layer.cornerRadius = 0
+        guard let userInfo = notification.userInfo as NSDictionary?,
+              var keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        keyboardFrame = view.convert(keyboardFrame, from: nil)
+        self.view.frame.size.height += keyBoardHeight
+        //        bottomView.frame.origin.y += (keyboardFrame.size.height-self.view.safeAreaInsets.bottom)
+        
+    }
+    
 }
 extension TextDetailVC : tapTestSettingAction {
     func tapTextSettingAction() {
@@ -155,18 +282,44 @@ extension TextDetailVC : tapTestSettingAction {
 }
 extension TextDetailVC : UITextViewDelegate{
     func textViewDidBeginEditing(_ textView: UITextView) {
+        print("DidBegin")
         if textView.text == textViewPlaceHoler {
             textView.text = nil
-            textView.textColor = UIColor(named: "grey01")
+            textView.textColor = UIColor(named: "grey02")
         }
     }
     func textViewDidEndEditing(_ textView: UITextView) {
+        print("DidEnd")
         if textView.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             textView.text = textViewPlaceHoler
             textView.textColor = UIColor(named: "grey03")
         }
     }
     func textViewDidChange(_ textView: UITextView) {
+        print("DidChange")
+        
+        if textView.text == "@" {
+            
+            for i in 0..<sampleCommentData.count{
+                SampleMentionData.append(MentionDataFormat(userImg: sampleCommentData[i].userImg, userName: sampleCommentData[i].userName))
+            }
+            mentionTableView.snp.updateConstraints { make in
+                make.height.equalTo(SampleMentionData.count * 32)
+            }
+            DispatchQueue.main.async {
+                self.mentionTableView.reloadData()
+            }
+            
+        }else{
+            
+            mentionTableView.snp.updateConstraints { make in
+                make.height.equalTo(1)
+            }
+            DispatchQueue.main.async {
+                self.mentionTableView.reloadData()
+            }
+        }
+        
         let size = CGSize(width: view.frame.width, height: .infinity)
         let estimatedSize = textView.sizeThatFits(size)
         if commentMaxHeight > Int(estimatedSize.height) {
@@ -177,6 +330,14 @@ extension TextDetailVC : UITextViewDelegate{
             textView.isScrollEnabled = true
         }
     }
+}
+extension TextDetailVC : tapAddCommetActionDelegate{
+    func tapAddCommentAction(username: String) {
+        commentTextView.becomeFirstResponder()
+        commentTextView.text = "@\(username) "
+    }
+    
+    
 }
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
