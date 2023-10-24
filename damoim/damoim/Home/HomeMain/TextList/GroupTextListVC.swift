@@ -35,12 +35,12 @@ class GroupTextListVC: UIViewController {
         textListTableView.separatorStyle = .none
         return textListTableView
     }()
-    private lazy var addTextButton : UIButton = {
+    private lazy var writeTextButton : UIButton = {
         var config = UIButton.Configuration.plain()
         config.image = UIImage(named: "addTextBtn")
         config.imagePadding = 0
         let addTextButton = UIButton(configuration: config)
-        
+        addTextButton.addTarget(self, action: #selector(tapWriteTextBtn), for: .touchUpInside)
         return addTextButton
     }()
     private lazy var navigationTitle : UILabel = {
@@ -67,6 +67,20 @@ class GroupTextListVC: UIViewController {
     
     
 }
+extension GroupTextListVC : UITableViewDataSource,UITableViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sample.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let textListTVC = tableView.dequeueReusableCell(withIdentifier: TextListTVCType1.identi, for: indexPath)as? TextListTVCType1 else {return UITableViewCell()}
+        textListTVC.textListDelegate = self
+        textListTVC.setWriteInfoView(model: sample[indexPath.item])
+        textListTVC.selectionStyle = .none
+        return textListTVC
+    }
+    
+}
 extension GroupTextListVC {
     @objc func tapGroupSet(){
         let setGroupVC = SetGroupVC()
@@ -79,7 +93,7 @@ extension GroupTextListVC {
         self.view.addSubview(textListTableView)
         self.view.addSubview(navigationBarImgView)
         self.view.addSubview(dimView)
-        self.view.addSubview(addTextButton)
+        self.view.addSubview(writeTextButton)
     }
     private func setAutoLayout(){
         textListTableView.snp.makeConstraints { make in
@@ -97,7 +111,7 @@ extension GroupTextListVC {
             make.right.equalTo(self.view.snp.right)
             make.bottom.equalTo(textListTableView.snp.top)
         }
-        addTextButton.snp.makeConstraints { make in
+        writeTextButton.snp.makeConstraints { make in
             make.bottom.equalTo(self.view.snp.bottom).offset(-86)
             make.right.equalTo(self.view.snp.right).offset(-16)
             make.size.height.width.equalTo(54)
@@ -124,22 +138,14 @@ extension GroupTextListVC {
         textListTableView.delegate = self
         textListTableView.dataSource = self
     }
-    
-}
-extension GroupTextListVC : UITableViewDataSource,UITableViewDelegate{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sample.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let textListTVC = tableView.dequeueReusableCell(withIdentifier: TextListTVCType1.identi, for: indexPath)as? TextListTVCType1 else {return UITableViewCell()}
-        textListTVC.textListDelegate = self
-        textListTVC.setWriteInfoView(model: sample[indexPath.item])
-        textListTVC.selectionStyle = .none
-        return textListTVC
+    @objc private func tapWriteTextBtn(){
+        let writeTextVC = WriteTextVC()
+        writeTextVC.modalPresentationStyle = .fullScreen
+        self.present(writeTextVC, animated: true)
     }
     
 }
+
 extension GroupTextListVC : tapMoreTextActionDelegate {
     func tapMoreTextAction(){
         let textDetailVC = TextDetailVC()
